@@ -1,4 +1,4 @@
-baseurl = "https://doks.netlify.app/"
+baseurl = "https://devpill-me.vercel.app/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true

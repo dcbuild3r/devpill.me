@@ -1,7 +1,7 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Devpill.me"
+title = "Devpill.me (👨‍💻,💊)"
 titleSeparator = "-"
 titleAddition = "Public good blockchain development guide"
 description = "devpill.me is a public good blockchain development guide aimed at becoming the go-to learning resource aggregator for web3 development."
@@ -10,14 +10,14 @@ description = "devpill.me is a public good blockchain development guide aimed at
 # docsVersion = "0.3"
 
 ## Open Graph
-images = ["doks.png"]
+images = ["pill.png"]
 ogLocale = "en_US"
 domainTLD = "doks.netlify.app"
-titleHome = "Doks Theme"
+titleHome = "Devpill.me"
 
 ## Twitter Cards
-twitterSite = "@getdoks"
-twitterCreator = "@henkverlinde"
+twitterSite = "@devpillme"
+twitterCreator = "@dcbuild3r"
 
 ## JSON-LD
 # schemaType = "Person"
@@ -28,15 +28,15 @@ schemaAuthorTwitter = "https://twitter.com/DCbuild3r"
 #schemaAuthorLinkedIn = "https://www.linkedin.com/in/henkverlinde/"
 schemaAuthorGitHub = "https://github.com/dcbuild3r"
 schemaLocale = "en-US"
-schemaLogo = "logo-doks.png"
+schemaLogo = "pill.png"
 schemaLogoWidth = 512
 schemaLogoHeight = 512
-schemaImage = "doks.png"
+schemaImage = "pill.png"
 schemaImageWidth = 1280
 schemaImageHeight = 640
 schemaTwitter = "https://twitter.com/devpillme"
 schemaLinkedIn = ""
-schemaGitHub = "hhttps://github.com/dcbuild3r/blockchain-development-guide"
+schemaGitHub = "https://github.com/dcbuild3r/blockchain-development-guide"
 schemaSection = "blog"
 
 ## Sitelinks Search Box
@@ -57,7 +57,7 @@ smallLimit = "300"
 footer = "Powered by <a class=\"text-muted\" href=\"https://www.netlify.com/\">Netlify</a>, <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
 
 # Feed
-copyRight = "Copyright (c) 2020-2021 Henk Verlinde"
+copyRight = ""
 
 # Alert
 alert = false
@@ -72,7 +72,7 @@ repoHost = "GitHub"
 docsRepo = "https://github.com/dcbuild3r/blockchain-development-guide"
 docsRepoBranch = "main"
 docsRepoSubPath = ""
-editPage = true
+editPage = false
 lastMod = false
 
 [options]
