@@ -1,7 +1,7 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Devpill.me (👨‍💻,💊)"
+title = "devpill.me (👨‍💻,💊)"
 titleSeparator = "-"
 titleAddition = "Public good blockchain development guide"
 description = "devpill.me is a public good blockchain development guide aimed at becoming the go-to learning resource aggregator for web3 development."
@@ -10,7 +10,7 @@ description = "devpill.me is a public good blockchain development guide aimed at
 # docsVersion = "0.3"
 
 ## Open Graph
-images = ["pill.png"]
+images = [""]
 ogLocale = "en_US"
 domainTLD = "doks.netlify.app"
 titleHome = "Devpill.me"
@@ -48,10 +48,10 @@ themeColor = "#fff"
 # Images
 quality = 85
 bgColor = "#fff"
-landscapePhotoWidths = [900, 800, 700, 600, 500]
-portraitPhotoWidths = [800, 700, 600, 500]
+landscapePhotoWidths = [900, 800, 700, 600, 500, 400, 300, 200, 100]
+portraitPhotoWidths = [800, 700, 600, 500, 400, 300, 200, 100]
 lqipWidth = "20x"
-smallLimit = "300"
+smallLimit = "10"
 
 # Footer
 footer = "Powered by <a class=\"text-muted\" href=\"https://www.netlify.com/\">Netlify</a>, <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
