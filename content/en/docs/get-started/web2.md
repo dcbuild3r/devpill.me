@@ -17,7 +17,11 @@ I believe that even though you might not work with developing front-ends it is s
 
 ![Frontend roadmap](https://github.com/dcbuild3r/blockchain-development-guide/blob/main/images/FE_roadmap.png?raw=true)
 
-- **Learning resources**
+#### Learning resources
+
 - [How does the internet work](https://www.youtube.com/watch?v=zN8YNNHcaZc)
 - [CS50 HTTP lecture](https://www.youtube.com/watch?v=PUPDGbnpSjw) (the [CS50 course](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x) on edX is a great intro into computer science)
 - [freeCodeCamp](https://www.freecodecamp.org/) - Here you can learn the basics of how HTML, CSS and JS works. Unless you're planning to write frontend interfaces you won't need it, but it's still good to experiment and learn how it works.
+- [Learn Git Branching](https://learngitbranching.js.org/) - Learn how to use the Git version control system.
+-[GitHub Learning Lab](https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources) - Learn how to use GitHub and manage git repositories within it.
+-[Open-source Computer Science](https://github.com/ossu/computer-science) - If you want to deepen your knowledge in CS you can take all of the necessary learning material that would be required at a university completely online and for free.
