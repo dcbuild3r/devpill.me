@@ -3,7 +3,8 @@
 <meta name="twitter:creator" content="{{ .Site.Params.twitterCreator }}">
 <meta name="twitter:title" content="{{ .Title }}">
 <meta name="twitter:description" content="{{ .Description }}">
-{{ with $.Params.images -}}
+<meta name="twitter:image" content="https://github.com/dcbuild3r/devpill.me/blob/main/static/devpill.png?raw=true" />
+<!-- {{ with $.Params.images -}}
   <meta name="twitter:image" content="{{ $.Permalink }}{{ index . 0 }}">
 {{ else -}}
   {{ $images := $.Resources.ByType "image" -}}
@@ -21,4 +22,5 @@
     {{ end -}}
   {{ end -}}
 {{ end -}}
+-->
 <meta name="twitter:image:alt" content="{{ .Title }}">
