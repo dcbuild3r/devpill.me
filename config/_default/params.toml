@@ -10,7 +10,7 @@ description = "devpill.me is a public good blockchain development guide aimed at
 # docsVersion = "0.3"
 
 ## Open Graph
-images = ["devpill.png"]
+images = ["devpill.png", "pill.png"]
 ogLocale = "en_US"
 domainTLD = "www.devpill.me"
 titleHome = "devpill.me"
