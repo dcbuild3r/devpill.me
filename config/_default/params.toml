@@ -10,10 +10,10 @@ description = "devpill.me is a public good blockchain development guide aimed at
 # docsVersion = "0.3"
 
 ## Open Graph
-images = [""]
+images = ["devpill.png"]
 ogLocale = "en_US"
-domainTLD = "doks.netlify.app"
-titleHome = "Devpill.me"
+domainTLD = "www.devpill.me"
+titleHome = "devpill.me"
 
 ## Twitter Cards
 twitterSite = "@devpillme"
