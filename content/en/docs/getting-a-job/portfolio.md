@@ -1,5 +1,5 @@
 ---
-title : "Porfolio"
+title : "Portfolio"
 description: "How to create a portfolio of relevant projects in the blockchain space"
 lead: ""
 date: 2022-03-09T08:47:36+00:00
