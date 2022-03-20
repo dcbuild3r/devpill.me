@@ -36,7 +36,7 @@ schemaImageWidth = 1280
 schemaImageHeight = 640
 schemaTwitter = "https://twitter.com/devpillme"
 schemaLinkedIn = ""
-schemaGitHub = "https://github.com/dcbuild3r/blockchain-development-guide"
+schemaGitHub = "https://github.com/dcbuild3r/devpill.me"
 schemaSection = "blog"
 
 ## Sitelinks Search Box
@@ -69,7 +69,7 @@ alertText = "Introducing the Doks child theme, several DX + UX updates, and more
 # repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
 repoHost = "GitHub"
 #repoHost = "Gitea"
-docsRepo = "https://github.com/dcbuild3r/blockchain-development-guide"
+docsRepo = "https://github.com/dcbuild3r/devpill.me"
 docsRepoBranch = "main"
 docsRepoSubPath = ""
 editPage = false
