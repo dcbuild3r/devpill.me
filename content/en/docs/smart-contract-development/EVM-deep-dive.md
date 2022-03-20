@@ -19,12 +19,12 @@ For a comprehensive EVM deepdive, I suggest these resources:
 - Go over OpenZeppelin's series on [Deconstructing smart contracts](https://blog.openzeppelin.com/deconstructing-a-solidity-contract-part-i-introduction-832efd2d7737/)
 - Read [Analyzing smart contracts](https://costa.fdi.ucm.es/papers/costa/AlbertCGRR20bTR.pdf) by Elvira Albert (very math heavy)
 - Read over [TakeNobu's slides on how the EVM works (visualized)](https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf)
-- Go over [design patterns section](#design-patterns)
-- Go over the exemplary good codebases at the beginning of the [Solidity section](#solidity)
+- Go over [design patterns section](https://www.devpill.me/docs/smart-contract-development/design-patterns/)
+- Go over the exemplary good codebases at the beginning of the [Solidity section](https://www.devpill.me/docs/smart-contract-development/solidity/)
 - Follow gas optimizoors like [@transmission11](https://twitter.com/transmissions11) for gas alpha
 - Get used to going to lookup gas costs for different OPCODE operations at [EVM Codes](https://www.evm.codes/)
 - Check out the [EVM execution specs](https://github.com/ethereum/execution-specs)
-- Learn to use [Foundry](#testing) well
+- Learn to use [Foundry](https://www.devpill.me/docs/smart-contract-development/testing/) well
 - Bonus resources in comments of [this Twitter thread](https://twitter.com/0x_doggie/status/1494025503446945799?s=20&t=jydW6zat0cCXAb3mUhPFWw)
 
 Special thanks to [@0x_doggie](https://twitter.com/0x_doggie/) and [@freddycoen](https://twitter.com/freddycoen/) from whose threads I extrapolated these resources.

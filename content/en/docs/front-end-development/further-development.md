@@ -13,6 +13,4 @@ By now you have learned a solid technology stack that can enable you to build al
 
 Build, Build, Build! Try creating small projects that implement ideas you come up with and practice the technologies you want to master. Also, don't be shy to ask questions to other web3 developers, and form learning groups with your friends, or other industry members.
 
-<!-- TODO: Add internal reference links-->
-
-Also, read over the [Getting a Job]() and [Mastery]() sections of this guide to get more insight into soft skills which are useful to learn to grow as a developer.
+Also, read over the [Getting a Job](https://www.devpill.me/docs/getting-a-job/introduction/) and [Mastery](https://www.devpill.me/docs/mastery) sections of this guide to get more insight into soft skills which are useful to learn to grow as a developer.

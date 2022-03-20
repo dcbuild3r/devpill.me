@@ -13,4 +13,4 @@ weight:
 
 This section is actively being developed and has a champion (person spearheading the development).
 
-Development of this section is done in partnership with [Starkware](https://starkware.co/) and developers from the Starknet ecosystem.
+#Development of this section is done in partnership with [Starkware](https://starkware.co/) and developers from the Starknet ecosystem.

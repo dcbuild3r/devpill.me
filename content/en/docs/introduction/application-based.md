@@ -10,17 +10,17 @@ weight: 14
 
 ---
 
-Another way to separate types of blockchain development is not based on the underlying tech stack, but on the use case that you are targeting. These are the categories that I believe are the most popular, however, there are many others that I'm not covering to keep the scope of this article more manageable. 
+Another way to separate types of blockchain development is not based on the underlying tech stack, but on the use case that you are targeting. These are the categories that I believe are the most popular, however, there are many others that I'm not covering to keep the scope of this article more manageable.
 
 <!-- TODO: Fill in links after inputting all of the content-->
 
 #### Coming soon
 
-- [DeFi]()
-- [Creator Economy]()
-- [MEV]()
-- [L2s]()
-- [Infrastructure]()
-- [Gaming]()
-- [Privacy]()
-- [Coordination / Public goods]()
+- DeFi
+- Creator Economy
+- MEV
+- L2s
+- Infrastructure
+- Gaming
+- Privacy
+- Coordination / Public goods

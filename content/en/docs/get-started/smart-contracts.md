@@ -53,4 +53,4 @@ In order to compile and deploy our first smart contract, we will use the Remix I
 
 ![Remix IDE](https://raw.githubusercontent.com/dcbuild3r/blockchain-development-guide/main/images/remix.png)
 
-We will go into a lot more depth on how smart contracts are programmed, tested, and deployed in the smart contract development section.
+We will go into a lot more depth on how smart contracts are programmed, tested, and deployed in the [smart contract development section](https://www.devpill.me/docs/smart-contract-development/introduction/).
