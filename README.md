@@ -1,159 +1,71 @@
-<p align="center">
-  <a href="https://getdoks.org/">
-    <img alt="Doks" src="https://doks.netlify.app/doks.svg" width="60">
-  </a>
-</p>
+![devpill.me](./images/devpill-screenshot.png)
 
-<h1 align="center">
-  Doks
-</h1>
+## What is devpill.me?
 
-<h3 align="center">
-  Modern Documentation Theme
-</h3>
+[devpill.me](https://www.devpill.me/) is a public good blockchain development guide aimed at becoming the go-to learning resource aggregator for web3 development.
 
-<p align="center">
-  Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize.
-</p>
+The go-to educational resource for blockchain developers to learn no matter their skill level. The guide is beginner-friendly, but the most skilled developers will find learning material as well. It has various different specializations (or tracks), the two main categories are skill-based (front end, back end, smart contracts, MEV searcher, core developer, ...) and application-based specializations (DeFi, gaming, creator economy, coordination / public goods, etc). The goal of this grant is to gather enough resources to incentivize different contributors to create the sections in which they are skilled and allow the community to curate and maintain the resource long term. The resources will also be used to create a custom UI for the guide and additional learning materials in order to create the most complete blockchain development learning resource in existence.
 
-<p align="center">
-  <a href="https://github.com/h-enk/doks/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/h-enk/doks?style=flat-square" alt="GitHub">
-  </a>
-  <a href="https://github.com/h-enk/doks/releases">
-    <img src="https://img.shields.io/github/v/release/h-enk/doks?include_prereleases&style=flat-square"alt="GitHub release (latest SemVer including pre-releases)">
-  </a>
-  <a href="https://www.npmjs.com/package/@hyas/doks">
-    <img src="https://img.shields.io/npm/v/@hyas/doks?style=flat-square" alt="npm (scoped)">
-  </a>
-  <a href="https://github.com/h-enk/doks/actions?query=workflow%3A%22Hyas+CI%22">
-    <img src="https://img.shields.io/github/workflow/status/h-enk/doks/Hyas%20CI/master?style=flat-square" alt="GitHub Workflow Status (branch)">
-  </a>
-  <a href="https://app.netlify.com/sites/doks/deploys">
-    <img src="https://img.shields.io/netlify/8a1009d5-88ac-413e-96ef-3f928674a083?style=flat-square" alt="Netlify">
-  </a>
-</p>
+## Table of contents
 
-![Doks — Modern Documentation Theme](https://raw.githubusercontent.com/h-enk/doks/master/images/tn.png)
+- [Support this guide](https://www.devpill.me/docs/support)
+- [Introduction](https://www.devpill.me/docs/introduction/foreword/)
+- [Get started](https://www.devpill.me/docs/get-started/introduction/)
 
-## Demo
+### Skill-based development
 
-- [doks.netlify.app](https://doks.netlify.app/)
+- [Frontend development](https://www.devpill.me/docs/front-end-development/introduction/)
+- [Backend blockchain development](https://www.devpill.me/docs/back-end-development/introduction/)
+- [Smart contract development](https://www.devpill.me/docs/smart-contract-development/introduction/)
+- [Core protocol development](https://www.devpill.me/docs/core-development/introduction/)
+- [Full-stack blockchain development](https://www.devpill.me/docs/full-stack-development/introduction/)
 
-## Why Doks?
+#### Coming soon
 
-Nine main reasons why you should use Doks:
+- [Security engineer](https://www.devpill.me/docs/security-engineer/wip/)
+- [Starknet developer](https://www.devpill.me/docs/starknet-development/wip/)
+- [MEV searcher](https://www.devpill.me/docs/mev-searcher/wip/)
+- [Cryptography](https://www.devpill.me/docs/cryptography/introduction/)
+- [Blockchain data analytics](https://www.devpill.me/docs/blockchain-data-analysis/resources/)
 
-1. __Security aware__. Get A+ scores on [Mozilla Observatory](https://observatory.mozilla.org/analyze/doks.netlify.app) out of the box. Easily change the default Security Headers to suit your needs.
+### Application-based development
 
-2. __Fast by default__. Get 100 scores on [Google Lighthouse](https://googlechrome.github.io/lighthouse/viewer/?gist=7731347bb8ce999eff7428a8e763b637) by default. Doks removes unused css, prefetches links, and lazy loads images.
+#### Coming soon
 
-3. __SEO-ready__. Use sensible defaults for structured data, open graph, and Twitter cards. Or easily change the SEO settings to your liking.
+- DeFi
+- Creator Economy
+- MEV
+- L2s
+- Infrastructure
+- Gaming
+- Privacy
+- Coordination / Public goods
 
-4. __Development tools__. Code with confidence. Check styles, scripts, and markdown for errors and fix automatically or manually.
+### Additional sections
 
-5. __Bootstrap framework__. Build robust, flexible, and intuitive websites with Bootstrap 5. Easily customize your Doks site with the source Sass files.
+- [Getting a job](https://www.devpill.me/docs/getting-a-job/introduction/)
+- [Social Capital](https://www.devpill.me/docs/social-capital/wip/)
+- [Mastery](https://www.devpill.me/docs/mastery/wip/)
 
-6. __Netlify-ready__. Deploy to Netlify with sensible defaults. Easily use Netlify Functions, Netlify Redirects, and Netlify Headers.
 
-7. __Full text search__. Search your Doks site with FlexSearch. Easily customize index settings and search options to your liking.
+## Support this public good
 
-8. __Page layouts__. Build pages with a landing page, blog, or documentation layout. Add custom sections and components to suit your needs.
-
-9. __Dark mode__. Switch to a low-light UI with the click of a button. Change colors with variables to match your branding.
-
-### Other features
-
-- __Multilingual and i18n__ support
-- __Versioning__ documentation support
-- __KaTeX__ math typesetting
-- __Mermaid__ diagrams and visualization
-- __highlight.js__ syntax highlighting
-
-## Requirements
-
-- [Git](https://git-scm.com/) — latest source release
-- [Node.js](https://nodejs.org/) — latest LTS version or newer
-
-<details>
-<summary>Why Node.js?</summary>
-
-Doks uses npm (included with Node.js) to centralize dependency management, making it [easy to update](https://getdoks.org/docs/help/how-to-update/) resources, build tooling, plugins, and build scripts.
-
-</details>
+- [Gitcoin grants](https://gitcoin.co/grants/4975/devpillme-a-public-good-blockchain-development-gu)
+- [Mirror NFTs](https://dcbuilder.mirror.xyz/PLNPOmKkYaP14kJa5A5pJgyIlg4dWHpjDiHS7BGC7J4)
+- Donation to [devpillme.eth](https://app.ens.domains/name/devpillme.eth/details) Ethereum address - (also on Optimism, Arbitrum, zkSync and Polygon PoS)
 
 ## Get started
 
-Start a new Doks project in three steps:
-
-### 1. Create a new site
-
-Doks is available as a child theme and a starter theme.
-
-#### Child theme
-
-- Intended for novice to intermediate users
-- Intended for minor customizations
-- [Easily update npm packages](https://getdoks.org/docs/help/how-to-update/) — __including__ [Doks](https://www.npmjs.com/package/@hyas/doks)
+### Install dependencies
 
 ```bash
-git clone https://github.com/h-enk/doks-child-theme.git my-doks-site && cd my-doks-site
-```
-
-#### Starter theme
-
-- Intended for intermediate to advanced users
-- Intended for major customizations
-- [Easily update npm packages](https://getdoks.org/docs/help/how-to-update/)
-
-```bash
-git clone https://github.com/h-enk/doks.git my-doks-site && cd my-doks-site
-```
-
-<details>
-<summary>Help me choose</summary>
-
-Not sure which one is for you? Pick the child theme.
-
-</details>
-
-### 2. Install dependencies
-
-```bash
-npm install
+yarn install
 ```
 
 ### 3. Start development server
 
 ```bash
-npm run start
+yarn start
 ```
 
-## Other commands
-
-Doks comes with [commands](https://getdoks.org/docs/prologue/commands/) for common tasks.
-
-## Documentation
-
-- [Netlify](https://docs.netlify.com/)
-- [Hugo](https://gohugo.io/documentation/)
-- [Doks](https://getdoks.org/)
-
-## Communities
-
-- [Netlify Community](https://community.netlify.com/)
-- [Hugo Forums](https://discourse.gohugo.io/)
-- [Doks Discussions](https://github.com/h-enk/doks/discussions)
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
-
-[![OC sponsor 0](https://opencollective.com/doks/tiers/sponsor/0/avatar.svg)](https://opencollective.com/doks/tiers/sponsor/0/website)
-[![OC sponsor 1](https://opencollective.com/doks/tiers/sponsor/1/avatar.svg)](https://opencollective.com/doks/tiers/sponsor/1/website)
-
-## Backers
-
-Support this project by becoming a backer. Your avatar will show up here.
-
-[![Backers](https://opencollective.com/doks/tiers/backer.svg)](https://opencollective.com/doks)
+This site is built using the [Doks](https://github.com/h-enk/doks) [HUGO](https://gohugo.io/) theme, hosted on [Vercel](https://vercel.com/). Once first iteration is finished will be deployed to IPFS/Arweave and GitHub actions will redeploy on commit to main. 
