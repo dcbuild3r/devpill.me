@@ -13,7 +13,7 @@ When you are on the social platforms mentioned above you should target the peopl
 
 - experts in your preferred field of interest
 
-If you talk to people with expertise in the fields that you want to become skilled in, then you’ll have a much easier time learning them, you’ll get good connections that will propel you forward in your career and you will also most likely have more opportunities and resources to grow as a developer by getting hired, getting tips on how to learn a top
+If you talk to people with expertise in the fields that you want to become skilled in, then you’ll have a much easier time learning them, you’ll get good connections that will propel you forward in your career and you will also most likely have more opportunities and resources to grow as a developer by getting hired, getting tips on how to learn about your specialization field efficiently and more!,
 
 - people trying to learn the same things you are learning
 
