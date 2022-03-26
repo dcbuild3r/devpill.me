@@ -13,14 +13,14 @@ There are different sets of skills required for different specializations, the t
 
 This guide will cover these main tracks, however anyone is free to submit a pull-request to add more or expand on the already existing ones:
 
-- [Frontend development]()
-- [Smart contract development]()
-- [Backend blockchain development]()
-- [Full-stack blockchain development]()
+- [Frontend development](/docs/front-end-development/introduction/)
+- [Smart contract development](/smart-contract-development/introduction/)
+- [Backend blockchain development](/back-end-development/introduction/)
+- [Full-stack blockchain development](/full-stack-development/introduction/)
 
 #### Coming soon
 
-- [Core development]()
+- [Core development](/docs/core-development/introduction/)
 - [Security engineer]()
 - [MEV searcher]()
 - [Protocol development]()
