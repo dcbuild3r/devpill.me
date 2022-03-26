@@ -14,9 +14,9 @@ There are different sets of skills required for different specializations, the t
 This guide will cover these main tracks, however anyone is free to submit a pull-request to add more or expand on the already existing ones:
 
 - [Frontend development](/docs/front-end-development/introduction/)
-- [Smart contract development](/smart-contract-development/introduction/)
-- [Backend blockchain development](/back-end-development/introduction/)
-- [Full-stack blockchain development](/full-stack-development/introduction/)
+- [Smart contract development](/docs/smart-contract-development/introduction/)
+- [Backend blockchain development](/docs/back-end-development/introduction/)
+- [Full-stack blockchain development](/docs/full-stack-development/introduction/)
 
 #### Coming soon
 
