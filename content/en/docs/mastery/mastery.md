@@ -6,7 +6,7 @@ date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00
 draft: false
 images: []
-weight: 903
+weight: 904
 ---
 
 Mastery of a craft can only be achieved when individuals hone their skills to the utmost and become competent experts. To acquire knowledge of a specific skillset, the individual needs to devote a lot of time and concentrated effort to learn as many intricacies, nuances, and details about their craft. They also need to assimilate that information into their abilities to wield the art necessary to perform it. They need to constantly keep up with the pace of development within that craft to retain their state-of-the-art skills. The context of blockchain development involves:

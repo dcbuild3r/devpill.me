@@ -6,7 +6,7 @@ date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00
 draft: false
 images: []
-weight: 905
+weight: 906
 ---
 
 To reach your peak, you need to create a sustainable set of habits that will allow you to keep working hard consistently. Since we are all human beings, we need to keep our bodies in check, as they are the hosts for our brains responsible for producing bug-free code. Note that this section is not professional advice as I am not an expert in these fields, and I am not a licensed advisor. If you want guidance in any areas covered, please consult with an expert trainer, nutritionist, therapist, coach, etc.

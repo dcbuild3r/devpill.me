@@ -13,6 +13,7 @@ contributors: ["dcbuilder.eth"]
 And another one! This time it's a section about [Mastery](https://www.devpill.me/docs/mastery/introduction/). Sections included are:
 
 - [Learning how to learn](https://www.devpill.me/docs/mastery/learn-to-learn/)
+- [How to take notes effectively](https://www.devpill.me/docs/mastery/notetaking/)
 - [Mentorship](https://www.devpill.me/docs/mastery/mentorship/)
 - [Mastery](https://www.devpill.me/docs/mastery/mastery/)
 - [Rationality](https://www.devpill.me/docs/mastery/mastery/#rationality)

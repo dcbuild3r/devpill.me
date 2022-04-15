@@ -6,7 +6,7 @@ date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00
 draft: false
 images: []
-weight: 902
+weight: 903
 ---
 
 Having guidance is extremely important to grow as rapidly as possible and make the most effective use of your time. I want to share some of the lessons I have learned over the past four years of researching blockchain development and web3. I don't want new developers to feel as overwhelmed by the number of possibilities and lack of structured guidance as I did.

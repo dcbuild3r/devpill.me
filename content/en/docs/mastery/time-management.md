@@ -6,7 +6,7 @@ date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00
 draft: false
 images: []
-weight: 904
+weight: 905
 ---
 
 Time management is vital to becoming an efficient developer, especially in crypto / web3, where there are so many distractions and shiny objects that it is hard to focus on essential tasks.
