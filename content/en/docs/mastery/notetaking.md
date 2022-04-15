@@ -40,37 +40,6 @@ If you don't want to read the book, you can read a summary of it and try to appl
 
 Next, let's explore different notetaking applications and what they are suitable for.
 
-When you constantly have to consume lots of learning materials, it is tough to learn it effectively and in a way that your brain can retain it for longer. Suppose you want to master any given topic. It is good to write notes as you're learning, especially in a digital format that you can easily query and reminisce yourself about the material. If you write practical notes, your brain is forced to think about the subject and hand and more easily synthesizes the ideas and learnings.
-
-Content retention is also heightened when you take good notes since your recollection of a subject is better when focusing on the essential parts of any given learning material.
-
-A great book to improve at notetaking is: 
-
-**How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers** 
-
-by Sönke Ahrens
-
-[Amazon link](https://www.amazon.com/gp/product/B09V5M8FR5/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=B09V5M8FR5&SubscriptionId=1MGPYB6YW3HWK55XCGG2)
-
-The book is inspired by the german notetaking method [*zettelkasten*](https://en.wikipedia.org/wiki/Zettelkasten).
-
-**Core principles of How to Take Smart Notes:**
-
-1. Writing is not the outcome of thinking; it is the medium in which thinking takes place
-2. Do your work as if writing is the only thing that matters
-3. Nobody ever starts from scratch
-4. Our tools and techniques are only as valuable as the workflow
-5. Standardization enables creativity
-6. Our work only gets better when exposed to high-quality feedback
-7. Work on multiple, simultaneous projects
-8. Organize your notes by context, not by topic
-9. Always follow the most interesting path
-10. Save contradictory ideas
-
-If you don't want to read the book, you can read a summary of it and try to apply its principles to your personal notetaking approach. - [Link](https://fortelabs.co/blog/how-to-take-smart-notes/)
-
-Next, let's explore different notetaking applications and what they are suitable for.
-
 #### Notion
 
 ![Notion](https://images.ctfassets.net/spoqsaf9291f/3URR6bnGgyuzpzRNwtgecf/e37c7dcfabd322a81f926cfffbc7e952/Screen_Shot_2021-09-20_at_6.17.28_PM.png)
