@@ -42,5 +42,3 @@ Once you've gone through all of the above the best you can do to learn Advanced 
 - [Zora v3](https://github.com/ourzora/v3)
 - [Rari Capital](https://github.com/Rari-Capital/vaults)
 - [Ribbon Finance](https://github.com/ribbon-finance/ribbon-v2/tree/master/contracts)
-
-![immutable](./immutable.png)

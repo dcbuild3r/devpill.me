@@ -46,4 +46,4 @@ The book is comprised of 6 smaller sections:
 - Book V: Mere Goodness
 - Book VI: Becoming Stronger
 
-You can read the sections sequentially as they originally come from blogposts he wrote. Each section goes through different areas of rationality.
+You can read the sections sequentially as they originally come from blogposts he wrote. Each section goes through different areas of rationality. A great summary of the book can be found [here](https://www.lesswrong.com/tag/rationality:-from-ai-to-zombies-summaries).

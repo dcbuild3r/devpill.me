@@ -1,6 +1,6 @@
 ---
-title : "Time management"
-description: "How to manage your time, stay productive and prioritize efficiency as a developer"
+title : "Self Development"
+description: "How to improve yourself in order to become a better developer long term."
 lead: ""
 date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00

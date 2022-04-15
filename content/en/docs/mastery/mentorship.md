@@ -1,6 +1,6 @@
 ---
-title : "Learn how to learn"
-description: "Learning how to learn is one of the most important skills to achieve mastery, here we discuss how."
+title : "Mentorship"
+description: "How and where to find mentors that will serve as a guiding light."
 lead: ""
 date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00
