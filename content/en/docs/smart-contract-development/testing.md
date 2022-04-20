@@ -27,7 +27,7 @@ The library is written in Rust, which is a systems-level programming language th
 The reason why Foundry is getting a lot of popularity and it is so important, is because Solidity tests should be written in Solidity and not in JavaScript. It is very hard to master two different languages at once and Solidity developers shouldn't be forced to learn it in order to be able to test their smart contracts. Foundry is also getting an increasingly superior development environment in terms of features. The main features for which you might use other toolkits are mainly deployment which is not supported by Foundry so far. For managing deployments, the standard toolkit is HardHat. For testing, gas optimization features, fuzzing, symbolic execution (hevm), etc, do use Foundry. Good resources for learning and mastering Foundry are:
 
 - [Brockjelmore's Foundry walkthrough](https://www.youtube.com/watch?v=Rp_V7bYiTCM)
-- [The Foundry Book](https://onbjerg.github.io/foundry-book/) - Community sourced documentation
+- [The Foundry Book](https://book.getfoundry.sh/) - Community sourced documentation
 - [Foudry 2.0](https://www.paradigm.xyz/2022/03/foundry-02)
 - [Zero Knowledge Podcast Episode 224: Foundry with Georgios Konstantopoulos](https://zeroknowledge.fm/224-2/)
 - [Tweet from @andreasbigger](https://twitter.com/andreasbigger/status/1500209878433894400?s=20&t=5HKeV0q_h3Z3QoRvlkO_hQ):
