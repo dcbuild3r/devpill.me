@@ -13,6 +13,7 @@ Understanding the ins and outs of the EVM is crucial for building highly optimiz
 
 For a comprehensive EVM deepdive, I suggest these resources:
 
+- [The EVM Handbook](https://noxx3xxon.notion.site/noxx3xxon/The-EVM-Handbook-bb38e175cc404111a391907c4975426d)
 - [EVM development starter kit](https://freddycoen.medium.com/evm-starter-kit-1790bcc992ef)
 - Read Chapter 13 (EVM) of [The Ethereum Book](https://github.com/ethereumbook/ethereumbook/blob/develop/13evm.asciidoc)
 - Read Femboy Capital's [Playdate with the EVM](https://femboy.capital/evm-pt1)
