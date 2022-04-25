@@ -30,7 +30,7 @@ The go-to educational resource for blockchain developers to learn no matter thei
 
 ### Application-based development
 
-#### Coming soon
+#### Planned sections
 
 - DeFi
 - Creator Economy
