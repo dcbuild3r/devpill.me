@@ -60,7 +60,7 @@ Self-Development use case:
 
 - [Gary Sheng's Leadership Blueprint](https://garysbrain.notion.site/garysbrain/Gary-s-Leadership-Blueprint-3020aee8549346c49c2495f5f21dec04)
 
-#### Roam Research
+### Roam Research
 
 [Roam Research](https://roamresearch.com/) is a notetaking app that leverages the structure of graphs to synthesize and connect different notes and pieces of knowledge by referencing concepts across notes. You can link different ideas in both directions and create mind maps for anything you learn.
 
@@ -70,23 +70,23 @@ Roam research is a subscription-based paid application ( `$` '15 per month or `$
 
 It is a great way to create a structure for any learning material, whether it is about Solidity, MEV, DeFi, some protocol design, public goods, or anything else. It is a great way to reference concepts and check where else you have referenced them, and expand on each note you take.
 
-##### How to use Roam Research
+### How to use Roam Research
 
 - [Beginner's Guide to Roam Research - Keep Productive](https://www.youtube.com/watch?v=A_7_8AAkV7M)
 - [This Note-Taking App is a Game Changer - Roam Research by Thomas Frank](https://www.youtube.com/watch?v=vxOffM_tVHI&ab_channel=ThomasFrank)
 - [How to Take Better Notes With Roam Research - Lawson Blake](https://lawsonblake.com/roam-research-review/)
 
-#### Obsidian
+### Obsidian
 
 ![Obsidian](https://obsidian.md/images/screenshot.png)
 
 [Obsidian](https://obsidian.md/) is a free alternative to Roam research that hosts your graphs locally. Some add-on features or licenses can be paid for as a subscription or one-time payment for added functionality. They will also soon release hosted graphs.
 
-##### How to use Obsidian
+### How to use Obsidian
 
 - [Your Beginner's Guide to Obsidian](https://www.keepproductive.com/blog/obsidian-beginners-guide)
 
-#### Inkdrop
+### Inkdrop
 
 ![Inkdrop](https://beta.docs.inkdrop.app/og-cover-image.jpg)
 
@@ -96,6 +96,6 @@ I use the Vim extension for writing using [Vim keybindings](https://github.com/v
 
 There is a 30-day free trial for the application. Otherwise, it costs `$` 50 per year or `$`6  per month.
 
-#### Others
+### Others
 
 For more applications, check out [this article](https://collegeinfogeek.com/best-note-taking-apps/) from College Info Geek comparing different notetaking apps
