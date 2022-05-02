@@ -11,7 +11,7 @@ weight: 905
 
 Time management is vital to becoming an efficient developer, especially in crypto / web3, where there are so many distractions and shiny objects that it is hard to focus on essential tasks.
 
-#### Planning
+### Planning
 
 Planning your days ahead of time is essential to maximize productivity as a developer, especially if you are a freelancer or don't have a robust synchronous structure within your organization. Since many web3 developers work remotely and teams coordinate asynchronously using tools like GitHub, Zoom / Google Meets, etc. It is essential to book the times you will spend working on a particular task or area.
 
@@ -28,6 +28,6 @@ To get deeper into planning/scheduling and developing high performance, I recomm
 - [The Power of Habit](https://www.shortform.com/summary/the-power-of-habit-summary-charles-duhigg?utm_source=google&utm_medium=cpc) - Charles Duhigg
 - [High Performance Habits](https://www.amazon.com/High-Performance-Habits-Extraordinary-People/dp/1401952852) - Brendon Burchard
 
-#### Project management
+### Project management
 
 As a software developer, you're going to work with many different people when you join a team or try to build a product yourself - from designers, front/back end devs, DevOps, data engineers to lawyers, product managers, etc. There will be systems set in place in the most mature developer environments to coordinate as an organization. Popular methods are [Agile](https://www.atlassian.com/agile#:~:text=Agile%20is%20an%20iterative%20approach,small%2C%20but%20consumable%2C%20increments.) and [SCRUM](https://en.wikipedia.org/wiki/Scrum_(software_development)). Popular apps for managing all of these processes, tasks, and interactions include tools like Asana, Linear, Jira, Trello, Notion, etc.
