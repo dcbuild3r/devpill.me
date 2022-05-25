@@ -76,4 +76,4 @@ A cool innovation done by app tools was the hEVM which is an EVM implementation 
 
 [Truffle Suite](https://trufflesuite.com/) is a suite of tools developed by Consensys to locally test smart contracts by deploying them on a local instance of the Ethereum blockchain, mocking user addresses using the Ganache library, writing tests using Truffle, and creating on-chain data pipelines for user interfaces using Drizzle. It was one of the first complete Ethereum developer tooling ecosystems that were released, but they’ve fallen out of favor in recent years as libraries like Hardhat overtook it.
 
-Personally would not recommend Truffle as testing should be done in Solidity and not in Javascript and deployments are handled better in Harhat.
+Personally would not recommend Truffle as testing should be done in Solidity and not in Javascript and deployments are handled better in HardHat.
