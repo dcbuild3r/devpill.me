@@ -38,6 +38,7 @@ The go-to educational resource for blockchain developers to learn no matter thei
 - L2s
 - Infrastructure
 - Gaming
+- Social
 - Privacy
 - Coordination / Public goods
 
@@ -46,7 +47,6 @@ The go-to educational resource for blockchain developers to learn no matter thei
 - [Getting a job](https://www.devpill.me/docs/getting-a-job/introduction/)
 - [Social Capital](https://www.devpill.me/docs/social-capital/wip/)
 - [Mastery](https://www.devpill.me/docs/mastery/wip/)
-
 
 ## Support this public good
 
@@ -68,4 +68,4 @@ yarn install
 yarn start
 ```
 
-This site is built using the [Doks](https://github.com/h-enk/doks) [HUGO](https://gohugo.io/) theme, hosted on [Vercel](https://vercel.com/). Once first iteration is finished will be deployed to IPFS/Arweave and GitHub actions will redeploy on commit to main. 
+This site is built using the [Doks](https://github.com/h-enk/doks) theme for [HUGO](https://gohugo.io/), hosted on [Vercel](https://vercel.com/). Once first iteration is finished will be deployed to IPFS/Arweave and GitHub actions will redeploy on commit to main. 
