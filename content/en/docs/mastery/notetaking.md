@@ -76,7 +76,7 @@ It is a great way to create a structure for any learning material, whether it is
 - [This Note-Taking App is a Game Changer - Roam Research by Thomas Frank](https://www.youtube.com/watch?v=vxOffM_tVHI&ab_channel=ThomasFrank)
 - [How to Take Better Notes With Roam Research - Lawson Blake](https://lawsonblake.com/roam-research-review/)
 
-#### Obsidian
+### Obsidian
 
 ![Obsidian](https://obsidian.md/images/screenshot.png)
 
