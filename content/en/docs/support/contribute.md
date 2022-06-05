@@ -9,7 +9,7 @@ images: []
 weight: 2
 ---
 
-If you want to contribute, please join [this Discord group](https://discord.gg/VV28M9tD) for collaborators and community members so that we can better coordinate and distribute tasks.
+If you want to contribute, please join [this Discord group](https://discord.gg/devpillme) for collaborators and community members so that we can better coordinate and distribute tasks.
 
 The process to contribute is as follows:
 
