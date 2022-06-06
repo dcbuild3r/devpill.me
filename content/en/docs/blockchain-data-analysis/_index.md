@@ -1,5 +1,5 @@
 ---
-title : "Blockhain data analysis"
+title : "Blockchain data analysis"
 description: "How to leverage data science tools in order to extract and display meaningful information from blockchains"
 lead: ""
 lead: ""

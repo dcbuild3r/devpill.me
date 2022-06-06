@@ -27,6 +27,10 @@ There are various programming languages that can be compiled into EVM bytecode, 
 
 In order to achieve the first and second goals, Yul provides high-level constructs like `for` loops, `if` and `switch` statements and function calls. These should be sufficient for adequately representing the control flow for assembly programs. Therefore, no explicit statements for `SWAP`, `DUP`, `JUMPDEST`, `JUMP` and `JUMPI` are provided, because the first two obfuscate the data flow and the last two obfuscate control flow. Furthermore, functional statements of the form `mul(add(x, y), 7)` are preferred over pure opcode statements like `7 y x add mul` because, in the first form, it is much easier to see which operand is used for which opcode."
 
+##### Yul+
+
+Yul also has an extension language called [Yul+](https://github.com/fuelLabs/yulp) which introduces a minimal transpiler and allows for more syntactic sugar when writing EVM Intermediate Language. Yul+ has now been archived, but for those looking to write optimized contracts Yul+ can help cut down on verbosity. Yul+ is notable in that is was the language which the first Optimistic Rollup was written.
+
 #### EVM Assembly
 
 [EVM Assembly](https://docs.soliditylang.org/en/v0.8.12/assembly.html) can be written inside of inline Solidity statements with the `assembly` keyword. It allows for more fine-grained control over the resulting bytecode. Oftentimes the compiler is unable to optimize Solidity code well and so it results in unnecessary gas costs.
@@ -39,4 +43,5 @@ Good toolkits for writing EVM Assembly:
 
 - [etk](https://github.com/quilt/etk)
 - [huffc](https://github.com/JetJadeja/huffc)
+- 
 - and the afforementioned Yul intermediate language
