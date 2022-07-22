@@ -30,7 +30,7 @@ The reason why Foundry is getting a lot of popularity and it is so important, is
 - [Nader Dabit's Foundry Cheatsheet](https://github.com/dabit3/foundry-cheatsheet)
 - [Brockjelmore's Foundry walkthrough](https://www.youtube.com/watch?v=Rp_V7bYiTCM)
 - [The Foundry Book](https://book.getfoundry.sh/) - Community sourced documentation
-- [Foudry 2.0](https://www.paradigm.xyz/2022/03/foundry-02)
+- [Foudry 0.2.0](https://www.paradigm.xyz/2022/03/foundry-02)
 - [Zero Knowledge Podcast Episode 224: Foundry with Georgios Konstantopoulos](https://zeroknowledge.fm/224-2/)
 - [Tweet from @andreasbigger](https://twitter.com/andreasbigger/status/1500209878433894400?s=20&t=5HKeV0q_h3Z3QoRvlkO_hQ):
   - Familiarize yourself w/ [Forge-cli](https://github.com/gakonst/foundry/blob/master/cli/README.md)
