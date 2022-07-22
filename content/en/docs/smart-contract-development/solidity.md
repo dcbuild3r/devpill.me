@@ -28,6 +28,8 @@ Another great resource is the [official Solidity blog](https://blog.soliditylang
 
 I recommend checking out the presentations from [Solidity Summit](https://blog.soliditylang.org/2022/05/03/solidity-summit-2022-recap/), a Solidity event that took place during the ETHAmsterdam conference and the [Underhanded Solidity submissions](https://blog.soliditylang.org/2022/04/09/announcing-the-underhanded-contest-winners-2022/) where contestasts had to find clever ways of writing seemingly secure code that includes subtle vulnerabilites.
 
+Community compilation of Solidity resources: [awesome-solidity](https://github.com/bkrem/awesome-solidity).
+
 #### Threads that talk about getting really good at Solidity
 
 - [Tips from Emilio Frangella @ Aave](https://twitter.com/The3D_/status/1485308693935763458?s=20&t=s2cbKFxvZ3tpjkFqcbyLfA)
