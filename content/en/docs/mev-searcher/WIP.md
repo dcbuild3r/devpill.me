@@ -9,4 +9,5 @@ images: []
 weight: 
 ---
 
-This section is actively being developed and has a champion (person spearheading the development).
+
+This section is not actively being developed, feel free to contribute by creating an MEV section!
