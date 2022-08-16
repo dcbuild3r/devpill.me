@@ -88,7 +88,7 @@ It is a great way to create a structure for any learning material, whether it is
 
 ### Inkdrop
 
-![Inkdrop](https://beta.docs.inkdrop.app/og-cover-image.jpg)
+![Inkdrop](https://www.inkdrop.app/og-cover-image.jpg)
 
 [Inkdrop](https://www.inkdrop.app/) is a Markdown notetaking application that is highly extensible and focuses on developers. I use it to write all of my articles and the [devpill.me](https://devpill.me/) guide and my [article on L2s](https://dcbuilder.mirror.xyz/QX_ELJBQBm1Iq45ktPsz8pWLZN1C52DmEtH09boZuo0), and some other pieces.
 
