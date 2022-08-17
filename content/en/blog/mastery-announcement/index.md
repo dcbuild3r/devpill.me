@@ -20,4 +20,4 @@ And another one! This time it's a section about [Mastery](https://www.devpill.me
 - [Time management](https://www.devpill.me/docs/mastery/time-management/)
 - [Self-development](https://www.devpill.me/docs/mastery/self-development/)
 
-Contributions are welcome, just pop into our joint [Telegram group for contributors](https://t.me/devpillme), talk about what you want to add or simply submit a pull request to the [blockchain-development-guide](https://github.com/dcbuild3r/blockchain-development-guide) or [devpill.me](https://github.com/dcbuild3r/devpill.me) GitHub repos.
+Contributions are welcome, just pop into our [Discord group](https://discord.gg/A376gXnmht), talk about what you want to add or simply submit a pull request to the [blockchain-development-guide](https://github.com/dcbuild3r/blockchain-development-guide) or [devpill.me](https://github.com/dcbuild3r/devpill.me) GitHub repos.
