@@ -6,7 +6,7 @@ date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00
 draft: false
 images: []
-weight: 1003
+weight: 103
 ---
 
 This section is not going to be kept up to date but will rather serve the purpose of illustrating the general state and direction of the network at the time of release of this section (Summer 2022). In order to keep up to date with the latest developments in Starknet, its technologies and its ecosystem, check out the How to stay up to date with Starknet section.

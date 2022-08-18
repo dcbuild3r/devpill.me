@@ -6,7 +6,7 @@ date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00
 draft: false
 images: []
-weight: 1001
+weight: 101
 ---
 
 [StarkNet](https://starkware.co/starknet/) is a permissionless decentralized [zero-knowledge rollup](https://mirror.xyz/brunny.eth/upIPESej7MjO2rFijwQyx8NBel8p45fIPV9J5G0Vn4cE#layer-2-and-proof-of-stake) that settles on Ethereum. It is an L2 scalability solution which allows developers to build highly performant applications.

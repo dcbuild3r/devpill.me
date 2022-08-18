@@ -6,7 +6,7 @@ date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00
 draft: false
 images: []
-weight: 1002
+weight: 102
 ---
 
 There are many different scalability solutions which are in different stages of development/production. There are pros and cons to using each one and so it is overwhelming to decide which environment to build on and what tools to learn when you don't have a full picture of the technologies out there. Building on Starknet means that you are making a bet on the ecosystem and the technologies underlying it. Most of the skills you will acquire by building applications on Starknet will transfer over to any other development platform, but some others like knowledge of Cairo syntax may not transfer over as Starknet and StarkEx are the only platforms that currently utilize this language as their VM. That's why it's important to know the underlying properties of the platforms on top of which you will be building as it has a direct impact over your career as a blockchain developer.
