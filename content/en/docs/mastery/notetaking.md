@@ -42,7 +42,7 @@ Next, let's explore different notetaking applications and what they are suitable
 
 ### Notion
 
-![Notion](https://images.ctfassets.net/spoqsaf9291f/3URR6bnGgyuzpzRNwtgecf/e37c7dcfabd322a81f926cfffbc7e952/Screen_Shot_2021-09-20_at_6.17.28_PM.png)
+![Notion](https://www.notion.so/front-static/meta/default.png)
 
 [Notion](https://www.notion.so/) is a great notetaking tool for all sorts of things. Whether it is taking notes on a topic that you are trying to master, managing complex projects with your team, creating a knowledge base, managing your daily tasks, and much more.
 
