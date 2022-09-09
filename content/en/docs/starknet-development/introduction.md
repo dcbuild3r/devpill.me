@@ -9,7 +9,7 @@ images: []
 weight: 81
 ---
 
-[StarkNet](https://starkware.co/starknet/) is a permissionless decentralized [zero-knowledge rollup](https://mirror.xyz/brunny.eth/upIPESej7MjO2rFijwQyx8NBel845fIPV9J5G0Vn4cE#Layer-2-and-Proof-of-Stake) that settles on Ethereum. It is an L2 scalability solution which allows developers to build highly performant applications.
+[StarkNet](https://starkware.co/starknet/) is a permissionless decentralized [zero-knowledge rollup](https://mirror.xyz/brunny.eth/upIPESej7MjO2rFijwQyx8NBel845fIPV9J5G0Vn4cE#Layer-2-and-Proof-of-Stake:~:text=Layer%202%20and%20Proof%2Dof%2DStake) that settles on Ethereum. It is an L2 scalability solution which allows developers to build highly performant applications.
 
 Since sequencers only need to execute transactions once, generate a zero-knowledge proof and submit that proof to Ethereum L1 to achieve finality and inherit security the security guarantees of the network. Anyone can build and deploy on StarkNet by writing contracts in a programming language called [Cairo](https://www.cairo-lang.org/).
 
