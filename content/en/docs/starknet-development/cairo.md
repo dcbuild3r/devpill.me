@@ -31,6 +31,8 @@ You can also use the [Warp transpiler](https://github.com/NethermindEth/warp) to
 
 After you've completed these tutorials the best way to keep learning is to try to build your own little pet project with Cairo. Something like a simple AMM contract, an NFT marketplace, or a Cairo version of the [lil-web3](https://github.com/m1guelpf/lil-web3/) repo created by [Miguel Piedrafita](https://twitter.com/m1guelpf). In this way you'll face issues that you will have to solve on your own, which is my experience one of the best ways to learn and solidify existing knowledge as you come to know what you don't understand. Another great way to improve is to look at production code from projects building on top of Starknet with Cairo. We mentioned the [OpenZeppelin Cairo](https://github.com/OpenZeppelin/cairo-contracts/) contracts, but there are many other projects. The only issue with reading production code is that its usually a project with a lot of files, folders and very little documentation so it might be hard to understand what the code is doing without it. That's why going over the OpenZeppelin contracts might be a better start as they are a library that is used quite often in the Starknet space.
 
+To write good Cairo code, checkout these [Cairo coding guidelines](https://medium.com/nethermind-eth/cairo-coding-guidelines-74eb6f4ee264) from [@massilachab](https://twitter.com/machilassab) and [@kalzakdev](https://twitter.com/kalzakdev).
+
 ## Cairo apps and tooling
 
 Repos with Cairo code you can get inspired from:
