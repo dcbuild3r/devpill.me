@@ -29,7 +29,7 @@ In order to achieve the first and second goals, Yul provides high-level construc
 
 ##### Yul+
 
-Yul also has an extension language called [Yul+](https://github.com/fuelLabs/yulp) which introduces a minimal transpiler and allows for more syntactic sugar when writing EVM Intermediate Language. Yul+ has now been archived, but for those looking to write optimized contracts Yul+ can help cut down on verbosity. Yul+ is notable in that is was the language which the first Optimistic Rollup was written.
+Yul also has an extension language called [Yul+](https://github.com/fuelLabs/yulp) which introduces a minimal transpiler and allows for more syntactic sugar when writing EVM Intermediate Language. Yul+ has now been archived, but for those looking to write optimized contracts Yul+ can help cut down on verbosity. Yul+ is notable for being the language in which the first Optimistic Rollup was written.
 
 #### EVM Assembly
 
@@ -42,6 +42,6 @@ Writing Yul or inline assembly can obfuscate the functionality of your code by m
 Good toolkits for writing EVM Assembly:
 
 - [etk](https://github.com/quilt/etk)
-- [huffc](https://github.com/JetJadeja/huffc)
+- [huffc](https://github.com/huff-language/huffc) (archived)
 - 
-- and the afforementioned Yul intermediate language
+- and the aforementioned Yul intermediate language
