@@ -13,16 +13,15 @@ There are different sets of skills required for different specializations, the t
 
 This guide will cover these main tracks, however anyone is free to submit a pull-request to add more or expand on the already existing ones:
 
-- [Frontend development](/docs/front-end-development/introduction/)
-- [Smart contract development](/docs/smart-contract-development/introduction/)
-- [Backend blockchain development](/docs/back-end-development/introduction/)
-- [Full-stack blockchain development](/docs/full-stack-development/introduction/)
+- [Frontend development](https://www.devpill.me/docs/front-end-development/introduction/)
+- [Smart contract development](https://www.devpill.me/docs/smart-contract-development/introduction/)
+- [Backend blockchain development](https://www.devpill.me/docs/back-end-development/introduction/)
+- [Full-stack blockchain development](https://www.devpill.me/docs/full-stack-development/introduction/)
+- [Core development](https://www.devpill.me/docs/core-development/introduction/)
+- [Starknet development](https://www.devpill.me/docs/starknet-development/introduction/)
 
-#### Coming soon
+Additional sections:
 
-- [Core development](/docs/core-development/introduction/)
-- [Security engineer]()
-- [MEV searcher]()
-- [Protocol development]()
-- [Cryptographer]()
-- [Blockchain data analytics]()
+- [Getting a job](https://www.devpill.me/docs/getting-a-job/introduction/)
+- [Mastery](https://www.devpill.me/docs/mastery/introduction/)
+- [Social Capital](https://www.devpill.me/docs/social-capital/introduction/)
