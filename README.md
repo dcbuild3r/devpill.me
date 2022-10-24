@@ -19,28 +19,8 @@ The go-to educational resource for blockchain developers to learn no matter thei
 - [Smart contract development](https://www.devpill.me/docs/smart-contract-development/introduction/)
 - [Core protocol development](https://www.devpill.me/docs/core-development/introduction/)
 - [Full-stack blockchain development](https://www.devpill.me/docs/full-stack-development/introduction/)
-
-#### Coming soon
-
-- [Security engineer](https://www.devpill.me/docs/security-engineer/wip/)
 - [Starknet developer](https://www.devpill.me/docs/starknet-development/wip/)
-- [MEV searcher](https://www.devpill.me/docs/mev-searcher/wip/)
 - [Cryptography](https://www.devpill.me/docs/cryptography/introduction/)
-- [Blockchain data analytics](https://www.devpill.me/docs/blockchain-data-analysis/resources/)
-
-### Application-based development
-
-#### Planned sections
-
-- DeFi
-- Creator Economy
-- MEV
-- L2s
-- Infrastructure
-- Gaming
-- Social
-- Privacy
-- Coordination / Public goods
 
 ### Additional sections
 

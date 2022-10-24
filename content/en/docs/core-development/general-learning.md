@@ -15,9 +15,9 @@ There are many topics to learn about in core-development, one can specialize in 
 
 - **Merkle trees**:
   - [Ethereum execution-layer Merkle Patricia Tree walkthrough](https://dzone.com/articles/ethereum-yellow-paper-walkthrough-27)
-- [Execution and Consensus layer Merge design](https://www.youtube.com/watch?v=8N10a1EBhBc), video by Danny Ryan
-- [Rollup centric roadmap](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698), post by Vitalik
-- Ethereum protocol ELI5 (coming soon)
+- [Execution and Consensus layer Merge design](https://www.youtube.com/watch?v=8N10a1EBhBc), video by [Danny Ryan](https://twitter.com/dannyryan)
+- [Rollup centric roadmap](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698), post by [Vitalik](https://twitter.com/VitalikButerin)
+- [The Hitchhiker's Guide to Ethereum](https://members.delphidigital.io/reports/the-hitchhikers-guide-to-ethereum/) by [Jon Charbonneau](https://twitter.com/jon_charb)
 
 #### Medium:
 
