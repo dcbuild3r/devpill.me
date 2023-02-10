@@ -43,5 +43,13 @@ Good toolkits for writing EVM Assembly:
 
 - [etk](https://github.com/quilt/etk)
 - [huffc](https://github.com/huff-language/huffc) (archived)
-- 
 - and the aforementioned Yul intermediate language
+
+#### Huff
+Huff is a low level language for the EVM. It's as close as one can get to writing actual bytecode, but with syntatic sugar that greatly improves developer experience. Huff does not hide the inner workings of the EVM. Instead, Huff exposes its programming stack to the developer for manual manipulation. For that reason, it has a specially suited design for developing highly optimized smart contracts.
+
+Huff was originally developed by the Aztec Protocol team to write Weierstrudel. Weierstrudel is an on-chain elliptical curve arithmetic library that requires incredibly optimized code that neither Solidity nor Yul could provide.
+
+While EVM experts can use [Huff](https://github.com/huff-language/huff-rs) to write highly-efficient smart contracts for use in production, it can also serve as a way for beginners to learn more about the EVM.
+
+You can learn more about Huff from the [official documentation](https://docs.huff.sh/).
