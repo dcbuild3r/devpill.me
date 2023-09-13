@@ -19,8 +19,8 @@ When you start out as a blockchain developer you usually won't have any novel fi
   Developers love to talk about their tooling, what libraries they use, what IDE and extensions they use to write code, what services, and applications they use on a daily basis to organize themselves and be productive, and much more.
   - ask questions about the things you are learning:
  chances are that many people following you have had the same questions as you in the past and they can provide you with a lot of helpful insight about any given topic
-  - be active in threads in that are relevant to your interests:
-if there relevant events happening within the space that you are interested in, it is a good idea to engage in public discourse with other people around those events in order to get a better overview of what's happening and to try to extract valuable information / learnings out of it
+  - be active in threads that are relevant to your interests:
+if there are relevant events happening within the space that you are interested in, it is a good idea to engage in public discourse with other people around those events in order to get a better overview of what's happening and to try to extract valuable information / learnings out of it
 - retweet things that happen within your field of interest with commentary / opinions
 - summarize articles, talks, events, updates, discuss code within the projects / fields that interest you.
 - shitpost (express your own personality / be yourself) for engagement (grows your network whilst having fun):
