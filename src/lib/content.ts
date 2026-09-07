@@ -37,6 +37,23 @@ export type DocSection = {
 	items: ContentPage[];
 };
 
+const devpillSectionOrder = [
+	"/docs/social-capital/",
+	"/docs/mastery/",
+	"/docs/getting-a-job/",
+	"/docs/cryptography/",
+	"/docs/core-development/",
+	"/docs/starknet-development/",
+	"/docs/full-stack-development/",
+	"/docs/smart-contract-development/",
+	"/docs/back-end-development/",
+	"/docs/front-end-development/",
+	"/docs/get-started/",
+	"/docs/introduction/",
+	"/docs/coming-soon/",
+	"/docs/WIP/",
+];
+
 function walkMarkdownFiles(directory: string): string[] {
 	return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
 		const absolutePath = path.join(directory, entry.name);
@@ -117,7 +134,11 @@ export function getDocNavigation(pages = getAllContentPages()): DocSection[] {
 	const sectionIndexes = docs.filter((page) => page.route.split("/").filter(Boolean).length === 2);
 
 	return sectionIndexes
-		.sort((a, b) => a.weight - b.weight || a.title.localeCompare(b.title))
+		.sort((a, b) => {
+			const aOrder = devpillSectionOrder.indexOf(a.route);
+			const bOrder = devpillSectionOrder.indexOf(b.route);
+			return (aOrder === -1 ? Number.MAX_SAFE_INTEGER : aOrder) - (bOrder === -1 ? Number.MAX_SAFE_INTEGER : bOrder) || a.weight - b.weight || a.title.localeCompare(b.title);
+		})
 		.map((section) => {
 			const sectionKey = section.route.split("/").filter(Boolean)[1];
 			const items = docs
