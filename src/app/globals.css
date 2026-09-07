@@ -206,6 +206,13 @@ input:focus-visible {
 	outline-offset: 2px;
 }
 
+.search-input:focus-visible {
+	border-color: transparent;
+	box-shadow: none;
+	outline: none;
+	outline-offset: 0;
+}
+
 .skip-link {
 	position: fixed;
 	top: 0.75rem;
