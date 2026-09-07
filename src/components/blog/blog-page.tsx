@@ -7,7 +7,7 @@ import { getReadingTime, type ContentPage } from "@/lib/content";
 
 function formattedDate(value?: string) {
 	if (!value) return "Undated";
-	return new Intl.DateTimeFormat("en", { year: "numeric", month: "long", day: "numeric" }).format(new Date(value));
+	return new Intl.DateTimeFormat("en", { year: "numeric", month: "long", day: "numeric", timeZone: "Europe/Prague" }).format(new Date(value));
 }
 
 function PostMeta({ page }: { page: ContentPage }) {
