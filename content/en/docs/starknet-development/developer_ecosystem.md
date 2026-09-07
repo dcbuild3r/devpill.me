@@ -19,7 +19,7 @@ Non-exhaustive list:
   - [GitHub](https://github.com/419Labs/starknet-ecosystem.com)
 - [Cairo goldmine (Cairo repo aggregator)](https://github.com/beautyisourbusiness/cairo-goldmine)
 - [awesome-starknet](https://github.com/gakonst/awesome-starknet) by [gakonst](https://twitter.com/gakonst)
-- [Starknet projects that I come across](https://github.com/stars/dcbuild3r/lists/starknet) ([dcbuilder](https://twitter.com/DCbuild3r))
+- [Starknet projects that I come across](https://github.com/stars/dcbuild3r/lists/starknet) ([dcbuilder](https://dcbuilder.dev))
 
 ## How to find a job in the Starknet ecosystem
 

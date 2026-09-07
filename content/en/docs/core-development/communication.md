@@ -11,8 +11,7 @@ weight: 97
 
 #### Most relevant communication channels
 
-- [Discord Eth R&D server](https://discord.gg/EyK6HmMcmy)
 - [Eth magicians](https://ethereum-magicians.org/), forum for governance / protocol discussion
 - [Eth research](https://ethresear.ch/), forum for research discussion
-- AllCoreDevs (ACD): [discord channel in R&D](https://discord.gg/S6r6RcWPC3)
+- AllCoreDevs (ACD): Ethereum's public execution and consensus-layer calls
 - Ethereum Foundation [youtube channel](https://www.youtube.com/c/EthereumFoundation) (streams ACD and Consensus calls)

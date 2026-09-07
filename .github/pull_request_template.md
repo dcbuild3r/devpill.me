@@ -12,7 +12,7 @@ Why are we doing this? What use cases does it support? What is the expected outc
 
 ## Checks
 
-- [ ] Read [Create a Pull Request](https://getdoks.org/docs/contributing/how-to-contribute/#create-a-pull-request)
+- [ ] Read [Creating a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks)
 - [ ] Supports all screen sizes (if relevant)
 - [ ] Supports both light and dark mode (if relevant)
-- [ ] Passes `npm run test`
+- [ ] Passes `bun run test`

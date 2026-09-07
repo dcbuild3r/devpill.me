@@ -11,7 +11,6 @@ weight: 86
 
 Miscellaneous resources that can help you become a better StarkNet developer:
 
-- [Starknet Discord](https://discord.gg/7vbHfZKJ4m)
 - [Telegram for spanish speaking Starknet enthusiasts](https://t.me/starknet_es)
 - ZK learning resources
   - [Introduction to Zero Knowledge Proofs podcast episode](https://overcast.fm/+LQLzpuMDQ)

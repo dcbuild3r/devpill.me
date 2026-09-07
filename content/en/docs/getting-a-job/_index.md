@@ -1,5 +1,5 @@
 ---
-title : "Getting a job"
+title : "Getting a Job"
 description: "How to get a job in the crypto/web3 space"
 lead: ""
 date: 2022-03-09T08:47:36+00:00

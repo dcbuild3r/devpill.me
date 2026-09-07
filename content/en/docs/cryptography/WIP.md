@@ -21,5 +21,5 @@ If you want to learn cryptography I recommend checking out:
 
 ZK cryptography:
 
-- [ZKHack Whiteboard sessions](https://zkhack.dev/whiteboard/) (join ZKHack community - [Twitter](https://twitter.com/__zkhack__)/[Discord](http://discord.gg/tHXyEbEqVN))
+- [ZKHack Whiteboard sessions](https://zkhack.dev/whiteboard/) (follow the ZKHack community on [Twitter](https://twitter.com/__zkhack__))
 - [ingopedia](http://github.com/ingonyama-zk/ingopedia/) (ZK resource aggregator)
