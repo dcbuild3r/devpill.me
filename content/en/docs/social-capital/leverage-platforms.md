@@ -1,6 +1,6 @@
 ---
 title : "Social platforms"
-description: "Twitter, Telegram, Discord, and conferences playbook."
+description: "Twitter, Telegram, and conferences playbook."
 lead: ""
 date: 2022-03-09T08:47:36+00:00
 lastmod: 2022-03-09T08:47:36+00:00
@@ -18,10 +18,6 @@ Twitter is used to write short form content that either redirects to long form c
 ### Telegram
 
 Telegram is a single threaded chatting platform which is generally used for simple group chats and newsletters in crypto, as a developer there are a few groups which you can follow within your specific realm of interest or create group chats with friends in order to discuss various topics, create a learning group for a programming language, protocol, or topic, and more. Telegram is good for simple one-thread conversations where you don’t need to manage asynchronous communication.
-
-### Discord
-
-Discord groups are useful once you have a big community, DAO, or friend group which you want to participate in. For developers there are various good groups like Buildspace, Developer DAO, and others. It is also used by different teams to manage contributions to an application, protocol or service. So for example if you become a contributor to an open-source project like Aave and you want to recommend a change to one of its open codebases and the change gets accepted, the coordination, and all the processes usually go through Discord. Many projects also help new contributors get started with building with a project and if you are learning something new it is a good place to ask technical questions.
 
 ### Real life events
 

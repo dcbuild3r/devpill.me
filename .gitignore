@@ -1,7 +1,8 @@
 node_modules
-public
 resources
-.netlify
-.hugo_build.lock
+.next
+.vercel
+out
+*.tsbuildinfo
 .DS_Store
 content/en/docs/get-started/.DS_Store

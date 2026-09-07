@@ -7,4 +7,4 @@ draft: true
 images: []
 ---
 
-{{< email user="dcbuilder" domain="protonmail.org" >}}
+[Contact the author through dcbuilder.dev](https://dcbuilder.dev).

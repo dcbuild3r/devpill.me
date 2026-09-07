@@ -32,6 +32,6 @@ A non-exhaustive list of learning platforms:
 - [Consensys Academy](https://consensys.net/academy/bootcamp/) (expensive bootcamp)
 - [BuidlGuidl](https://buidlguidl.com/) (free)
 - [Learn Web3](https://www.learnweb3.io/) (free)
-- Affiliated (I, dcbuilder, am an advisor):
+- Affiliated (I, [dcbuilder](https://dcbuilder.dev), am an advisor):
   - [Artemis](https://www.artemis.education/) (free / income sharing)
   - [Crystalize](https://crystalize.dev/) (income sharing)
