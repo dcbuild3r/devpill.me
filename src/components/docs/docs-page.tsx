@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight, BookOpen, CaretRight, Clock, Hash } from "@phosp
 import Link from "next/link";
 import { MarkdownContent } from "@/components/content/markdown-content";
 import { DocsSidebar } from "@/components/docs/docs-sidebar";
+import { GuideSearchDialog } from "@/components/docs/guide-search";
 import { SiteShell } from "@/components/layout/site-shell";
 import { getReadingTime, getTableOfContents, type ContentPage, type DocSection } from "@/lib/content";
 
@@ -79,10 +80,11 @@ export function DocsPage({ page, pages, navigation }: { page: ContentPage; pages
 
 	return (
 		<SiteShell>
+			<GuideSearchDialog pages={pages.map(({ title, description, route, section }) => ({ title, description, route, section }))} />
 			<main id="main-content" className="mx-auto max-w-[1320px] px-5 py-8 sm:px-8 sm:py-12 lg:px-12">
-				<div className="mb-5 lg:hidden"><details className="rounded border border-border bg-card"><summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-sm font-semibold [&::-webkit-details-marker]:hidden"><BookOpen size={17} /> Browse the guide</summary><div className="border-t border-border p-4"><DocsSidebar navigation={navigation} pages={pages} currentRoute={page.route} /></div></details></div>
+				<div className="mb-5 lg:hidden"><details className="rounded border border-border bg-card"><summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-sm font-semibold [&::-webkit-details-marker]:hidden"><BookOpen size={17} /> Browse the guide</summary><div className="border-t border-border p-4"><DocsSidebar navigation={navigation} currentRoute={page.route} /></div></details></div>
 				<div className="grid gap-10 lg:grid-cols-[18rem_minmax(0,1fr)] xl:grid-cols-[18rem_minmax(0,1fr)_14rem]">
-					<div className="hidden lg:block"><DocsSidebar navigation={navigation} pages={pages} currentRoute={page.route} /></div>
+					<div className="hidden lg:block"><DocsSidebar navigation={navigation} currentRoute={page.route} /></div>
 					<article className="min-w-0">
 						<nav className="mb-8 flex items-center gap-2 text-sm text-muted-foreground" aria-label="Breadcrumb"><Link href="/docs/" className="no-underline hover:text-primary">Guide</Link><CaretRight size={13} />{section ? <><Link href={section.route} className="no-underline hover:text-primary">{section.title}</Link><CaretRight size={13} /></> : null}<span className="truncate text-foreground">{page.title}</span></nav>
 						<div className="max-w-3xl">
