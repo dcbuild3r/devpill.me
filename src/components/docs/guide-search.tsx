@@ -40,7 +40,7 @@ export function GuideSearch() {
 
 	return (
 		<Button type="button" variant="outline" className="h-10 w-full justify-between rounded bg-background px-3 text-muted-foreground" onClick={() => setSearchOpen(true)} aria-label="Search the guide" aria-expanded={open} aria-controls="guide-search-dialog">
-			<span className="inline-flex items-center gap-2"><MagnifyingGlass size={17} /> Search the guide</span>
+			<span className="inline-flex items-center gap-2"><MagnifyingGlass size={17} aria-hidden="true" /> Search the guide</span>
 			<kbd className="hidden rounded-md border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] sm:inline">⌘ K</kbd>
 		</Button>
 	);
@@ -67,7 +67,7 @@ export function GuideSearchDialog({ pages }: { pages: SearchPage[] }) {
 				setSearchOpen(true);
 				return;
 			}
-			if (event.key === "Escape") closeSearch();
+			if (event.key === "Escape" || event.key === "Esc") closeSearch();
 		};
 		document.addEventListener("keydown", handleKeyDown);
 		return () => document.removeEventListener("keydown", handleKeyDown);
@@ -91,8 +91,8 @@ export function GuideSearchDialog({ pages }: { pages: SearchPage[] }) {
 				<div className="max-h-[calc(100dvh-11rem)] overflow-y-auto overscroll-contain p-2">
 					{results.length ? results.map((page) => (
 						<Link key={page.route} href={page.route} onClick={closeSearch} className="block rounded px-3 py-3 no-underline transition-colors hover:bg-muted">
-							<div className="flex items-center justify-between gap-3">
-								<span className="font-semibold">{page.title}</span>
+							<div className="flex min-w-0 items-center justify-between gap-3">
+								<span className="min-w-0 break-words font-semibold">{page.title}</span>
 								<span className="eyebrow text-muted-foreground">{page.section}</span>
 							</div>
 							<p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{page.description || "Open this guide note"}</p>
