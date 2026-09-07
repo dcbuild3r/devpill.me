@@ -62,7 +62,8 @@ function routeFromSource(sourcePath: string) {
 		segments.push(filename.slice(0, -3));
 	}
 
-	return segments.length === 0 ? "/" : `/${segments.join("/")}/`;
+	const encodedSegments = segments.map((segment) => encodeURIComponent(segment));
+	return encodedSegments.length === 0 ? "/" : `/${encodedSegments.join("/")}/`;
 }
 
 function normalizeValue(value: unknown) {
@@ -101,7 +102,13 @@ export function getAllContentPages() {
 }
 
 export function getPageByRoute(route: string) {
-	const normalizedRoute = route === "/" ? "/" : `/${route.replace(/^\//, "").replace(/\/+$/, "")}/`;
+	let normalizedRoute: string;
+	try {
+		const decodedSegments = route.replace(/^\//, "").replace(/\/+$/, "").split("/").filter(Boolean).map((segment) => decodeURIComponent(segment));
+		normalizedRoute = decodedSegments.length === 0 ? "/" : `/${decodedSegments.map((segment) => encodeURIComponent(segment)).join("/")}/`;
+	} catch {
+		return undefined;
+	}
 	return getAllContentPages().find((page) => page.route === normalizedRoute);
 }
 
