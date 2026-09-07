@@ -1,5 +1,5 @@
 ---
-title : "smart contracts"
+title : "Smart Contracts"
 description: "How to write smart contracts on Ethereum"
 lead: ""
 date: 2022-03-09T08:47:36+00:00

@@ -1,5 +1,5 @@
 ---
-title : "Full-stack development"
+title : "Full-stack Development"
 description: "How to become a full-stack blockchain developer"
 lead: ""
 date: 2022-03-09T08:47:36+00:00

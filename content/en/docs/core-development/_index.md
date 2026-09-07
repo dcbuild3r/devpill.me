@@ -1,5 +1,5 @@
 ---
-title : "Core development"
+title : "Core Development"
 description: "How to become a protocol engineer on Ethereum and work on client implementations for the consensus and execution layers."
 lead: ""
 date: 2022-03-09T08:47:36+00:00

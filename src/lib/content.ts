@@ -38,20 +38,18 @@ export type DocSection = {
 };
 
 const devpillSectionOrder = [
-	"/docs/social-capital/",
-	"/docs/mastery/",
-	"/docs/getting-a-job/",
-	"/docs/cryptography/",
-	"/docs/core-development/",
-	"/docs/starknet-development/",
-	"/docs/full-stack-development/",
-	"/docs/smart-contract-development/",
-	"/docs/back-end-development/",
-	"/docs/front-end-development/",
-	"/docs/get-started/",
 	"/docs/introduction/",
-	"/docs/coming-soon/",
-	"/docs/WIP/",
+	"/docs/get-started/",
+	"/docs/front-end-development/",
+	"/docs/back-end-development/",
+	"/docs/smart-contract-development/",
+	"/docs/full-stack-development/",
+	"/docs/starknet-development/",
+	"/docs/core-development/",
+	"/docs/cryptography/",
+	"/docs/getting-a-job/",
+	"/docs/mastery/",
+	"/docs/social-capital/",
 ];
 
 function walkMarkdownFiles(directory: string): string[] {
