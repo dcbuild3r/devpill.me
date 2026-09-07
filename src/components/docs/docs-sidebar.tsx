@@ -1,12 +1,12 @@
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
-import type { ContentPage, DocSection } from "@/lib/content";
+import type { DocSection } from "@/lib/content";
 import { GuideSearch } from "@/components/docs/guide-search";
 
-export function DocsSidebar({ navigation, pages, currentRoute }: { navigation: DocSection[]; pages: ContentPage[]; currentRoute: string }) {
+export function DocsSidebar({ navigation, currentRoute }: { navigation: DocSection[]; currentRoute: string }) {
 	return (
 		<aside className="lg:sticky lg:top-[6.75rem] lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-4">
-			<GuideSearch pages={pages.map(({ title, description, route, section }) => ({ title, description, route, section }))} />
+			<GuideSearch />
 			<nav className="mt-6" aria-label="Guide navigation">
 				<Link href="/docs/" className={`mb-4 flex items-center justify-between rounded px-3 py-2 text-sm font-semibold no-underline transition-colors ${currentRoute === "/docs/" ? "bg-muted text-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}>
 					<span>All sections</span><span className="eyebrow text-muted-foreground">{navigation.length}</span>
