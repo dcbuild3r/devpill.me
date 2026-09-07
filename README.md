@@ -1,6 +1,6 @@
 # devpill.me
 
-devpill.me is a public-good blockchain development guide for people who want to understand the systems they are building on — and then make something of their own.
+devpill.me is a public-good blockchain development guide for people who want to understand the systems they are building on, and then make something of their own.
 
 The site is a Next.js App Router application using TypeScript, Bun, Tailwind CSS v4, next-themes, and source-owned shadcn/ui components. The guide content remains Markdown under `content/en/`, so adding or revising a note stays lightweight.
 
