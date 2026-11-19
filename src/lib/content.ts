@@ -1,23 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { site } from "@/lib/site";
 
-const contentRoot = path.join(process.cwd(), "content", "en");
+const contentDir = path.join("content", "en");
 
-type FrontMatter = {
-	title?: string;
-	description?: string;
-	lead?: string;
-	draft?: boolean | string;
-	date?: Date | string;
-	lastmod?: Date | string;
-	weight?: number | string;
-	contributors?: string[];
-	images?: string[];
-};
+export type PageKind = "home" | "docs-home" | "section" | "doc" | "blog-index" | "post" | "contributors-index" | "contributor" | "page";
 
-export type ContentPage = {
+export type Page = {
+	kind: PageKind;
 	route: string;
+	segments: string[];
 	title: string;
 	description: string;
 	lead: string;
@@ -26,158 +19,137 @@ export type ContentPage = {
 	lastmod?: string;
 	weight: number;
 	contributors: string[];
-	images: string[];
-	section: string;
+	readingTime: number;
 	sourcePath: string;
+	/** Set on `section` and `doc` pages. */
+	section?: Section;
+	/** Reading order across the whole guide, set on `section` and `doc` pages. */
+	prev?: Page;
+	next?: Page;
 };
 
-export type DocSection = {
-	title: string;
-	route: string;
-	items: ContentPage[];
+export type Section = { page: Page; number: number; pages: Page[] };
+export type Track = { name: string; sections: Section[] };
+
+export type Content = {
+	pages: Map<string, Page>;
+	tracks: Track[];
+	sections: Section[];
+	posts: Page[];
+	contributors: Page[];
 };
 
-const devpillSectionOrder = [
-	"/docs/introduction/",
-	"/docs/get-started/",
-	"/docs/front-end-development/",
-	"/docs/back-end-development/",
-	"/docs/smart-contract-development/",
-	"/docs/full-stack-development/",
-	"/docs/starknet-development/",
-	"/docs/core-development/",
-	"/docs/cryptography/",
-	"/docs/getting-a-job/",
-	"/docs/mastery/",
-	"/docs/social-capital/",
-];
+const trackNames = ["Foundations", "Specializations", "Career"];
+const trackOfSection: Record<string, string> = {
+	introduction: "Foundations",
+	"get-started": "Foundations",
+	"getting-a-job": "Career",
+	mastery: "Career",
+	"social-capital": "Career",
+};
 
-function walkMarkdownFiles(directory: string): string[] {
+function kindOf([root, ...rest]: string[]): PageKind {
+	if (!root) return "home";
+	if (root === "docs") return rest.length === 0 ? "docs-home" : rest.length === 1 ? "section" : "doc";
+	if (root === "blog") return rest.length ? "post" : "blog-index";
+	if (root === "contributors") return rest.length ? "contributor" : "contributors-index";
+	return "page";
+}
+
+function markdownFiles(directory: string): string[] {
 	return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-		const absolutePath = path.join(directory, entry.name);
-		if (entry.isDirectory()) return walkMarkdownFiles(absolutePath);
-		return entry.isFile() && entry.name.endsWith(".md") ? [absolutePath] : [];
+		const entryPath = path.join(directory, entry.name);
+		if (entry.isDirectory()) return markdownFiles(entryPath);
+		return entry.name.endsWith(".md") ? [entryPath] : [];
 	});
 }
 
-function titleFromSlug(slug: string) {
-	return slug
-		.replace(/[-_]+/g, " ")
-		.replace(/\b\w/g, (character) => character.toUpperCase());
-}
-
-function routeFromSource(sourcePath: string) {
-	const relativePath = path.relative(contentRoot, sourcePath);
-	const segments = relativePath.split(path.sep);
-	const filename = segments.pop() ?? "";
-
-	if (filename === "_index.md" || filename === "index.md") {
-		// Section index files map to the containing directory.
-	} else if (filename.endsWith(".md")) {
-		segments.push(filename.slice(0, -3));
-	}
-
-	const encodedSegments = segments.map((segment) => encodeURIComponent(segment));
-	return encodedSegments.length === 0 ? "/" : `/${encodedSegments.join("/")}/`;
-}
-
-function normalizeValue(value: unknown) {
+function isoDate(value: unknown) {
 	return value instanceof Date ? value.toISOString() : value ? String(value) : undefined;
 }
 
-function parsePage(sourcePath: string): ContentPage | null {
-	const parsed = matter(fs.readFileSync(sourcePath, "utf8"));
-	const data = parsed.data as FrontMatter;
-	if (data.draft === true || data.draft === "true") return null;
-	const route = routeFromSource(sourcePath);
-	const routeSegments = route.split("/").filter(Boolean);
-	const title = data.title ?? titleFromSlug(routeSegments.at(-1) ?? "devpill.me");
+function titleFromSlug(slug: string) {
+	return slug.replace(/[-_]+/g, " ").replace(/\b\w/g, (character) => character.toUpperCase());
+}
 
-	return {
-		route,
-		title,
+function parsePage(sourcePath: string): Page[] {
+	const { data, content } = matter(fs.readFileSync(sourcePath, "utf8"));
+	if (data.draft === true || data.draft === "true") return [];
+
+	const segments = path.relative(contentDir, sourcePath).split(path.sep);
+	const filename = segments.pop() ?? "";
+	if (filename !== "_index.md" && filename !== "index.md") segments.push(filename.slice(0, -3));
+	const body = content.trim();
+
+	return [{
+		kind: kindOf(segments),
+		route: segments.length ? `/${segments.join("/")}/` : "/",
+		segments,
+		title: data.title ?? titleFromSlug(segments.at(-1) ?? site.name),
 		description: data.description ?? "",
 		lead: data.lead ?? "",
-		body: parsed.content.trim(),
-		date: normalizeValue(data.date),
-		lastmod: normalizeValue(data.lastmod),
+		body,
+		date: isoDate(data.date),
+		lastmod: isoDate(data.lastmod),
 		weight: Number(data.weight ?? 999),
 		contributors: data.contributors ?? [],
-		images: data.images ?? [],
-		section: routeSegments[0] ?? "home",
-		sourcePath,
+		readingTime: Math.max(1, Math.ceil(body.split(/\s+/).filter(Boolean).length / 220)),
+		sourcePath: sourcePath.split(path.sep).join("/"),
+	}];
+}
+
+function loadContent(): Content {
+	const all = markdownFiles(contentDir).flatMap(parsePage).sort((a, b) => a.route.localeCompare(b.route));
+	const byKind = (kind: PageKind) => all.filter((page) => page.kind === kind);
+	const byWeight = (a: Page, b: Page) => a.weight - b.weight || a.title.localeCompare(b.title);
+
+	// Section `_index.md` weights run high to low: Introduction is 20, Social Capital is 1.
+	const sections = byKind("section")
+		.sort((a, b) => byWeight(b, a))
+		.map((page, index): Section => ({
+			page,
+			number: index + 1,
+			pages: byKind("doc").filter((doc) => doc.segments[1] === page.segments[1]).sort(byWeight),
+		}));
+
+	const readingOrder = sections.flatMap((section) => {
+		const pages = [section.page, ...section.pages];
+		for (const page of pages) page.section = section;
+		return pages;
+	});
+	readingOrder.forEach((page, index) => {
+		page.prev = readingOrder[index - 1];
+		page.next = readingOrder[index + 1];
+	});
+
+	return {
+		pages: new Map(all.map((page) => [page.segments.join("/"), page])),
+		tracks: trackNames.map((name) => ({
+			name,
+			sections: sections.filter((section) => (trackOfSection[section.page.segments[1]] ?? "Specializations") === name),
+		})),
+		sections,
+		posts: byKind("post").sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "") || byWeight(a, b)),
+		contributors: byKind("contributor"),
 	};
 }
 
-export function getAllContentPages() {
-	return walkMarkdownFiles(contentRoot)
-		.map(parsePage)
-		.filter((page): page is ContentPage => Boolean(page))
-		.sort((a, b) => a.route.localeCompare(b.route));
+let cached: Content | undefined;
+
+export function getContent(): Content {
+	// Development re-reads so Markdown edits show up without a restart.
+	if (process.env.NODE_ENV !== "production") return loadContent();
+	return (cached ??= loadContent());
 }
 
-export function getPageByRoute(route: string) {
-	let normalizedRoute: string;
-	try {
-		const decodedSegments = route.replace(/^\//, "").replace(/\/+$/, "").split("/").filter(Boolean).map((segment) => decodeURIComponent(segment));
-		normalizedRoute = decodedSegments.length === 0 ? "/" : `/${decodedSegments.map((segment) => encodeURIComponent(segment)).join("/")}/`;
-	} catch {
-		return undefined;
-	}
-	return getAllContentPages().find((page) => page.route === normalizedRoute);
+export function getPage(slug: string[] = []) {
+	return getContent().pages.get(slug.join("/"));
 }
 
-export function getDocNavigation(pages = getAllContentPages()): DocSection[] {
-	const docs = pages.filter((page) => page.section === "docs");
-	const sectionIndexes = docs.filter((page) => page.route.split("/").filter(Boolean).length === 2);
-
-	return sectionIndexes
-		.sort((a, b) => {
-			const aOrder = devpillSectionOrder.indexOf(a.route);
-			const bOrder = devpillSectionOrder.indexOf(b.route);
-			return (aOrder === -1 ? Number.MAX_SAFE_INTEGER : aOrder) - (bOrder === -1 ? Number.MAX_SAFE_INTEGER : bOrder) || a.weight - b.weight || a.title.localeCompare(b.title);
-		})
-		.map((section) => {
-			const sectionKey = section.route.split("/").filter(Boolean)[1];
-			const items = docs
-				.filter((page) => {
-					const segments = page.route.split("/").filter(Boolean);
-					return segments[1] === sectionKey && segments.length > 2;
-				})
-				.sort((a, b) => a.weight - b.weight || a.title.localeCompare(b.title));
-
-			return { title: section.title, route: section.route, items };
-		});
+export function ogImagePath(page: Page) {
+	return `/og/${[...page.segments, "card.png"].join("/")}`;
 }
 
-export function getBlogPosts(pages = getAllContentPages()) {
-	return pages
-		.filter((page) => page.section === "blog" && page.route !== "/blog/")
-		.sort((a, b) => {
-			const dateDifference = (b.date ?? "").localeCompare(a.date ?? "");
-			return dateDifference || a.weight - b.weight;
-		});
-}
-
-export function getContributors(pages = getAllContentPages()) {
-	return pages.filter((page) => page.section === "contributors" && page.route !== "/contributors/");
-}
-
-export function getReadingTime(body: string) {
-	return Math.max(1, Math.ceil(body.split(/\s+/).filter(Boolean).length / 220));
-}
-
-export function slugifyHeading(value: string) {
-	return value
-		.toLowerCase()
-		.replace(/[^\p{L}\p{N}\s-]/gu, "")
-		.trim()
-		.replace(/[\s-]+/g, "-");
-}
-
-export function getTableOfContents(body: string) {
-	return [...body.matchAll(/^(#{2,3})\s+(.+)$/gm)].map((match) => {
-		const title = match[2].replace(/[`*_\[\]]/g, "").trim();
-		return { depth: match[1].length, title, id: slugifyHeading(title) };
-	});
+export function editUrl(page: Page) {
+	return `${site.repo}/edit/main/${page.sourcePath}`;
 }

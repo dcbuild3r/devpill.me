@@ -161,21 +161,6 @@ h6 {
 	text-wrap: balance;
 }
 
-a:not([class]) {
-	color: var(--primary);
-	text-underline-offset: 0.2em;
-}
-
-a:not([class]):hover,
-a:not([class]):focus-visible {
-	text-decoration: underline;
-}
-
-button a:hover,
-a[role="button"]:hover {
-	text-decoration: none;
-}
-
 ::selection {
 	background: rgb(211 46 157 / 30%);
 }
@@ -183,6 +168,42 @@ a[role="button"]:hover {
 .header-bar {
 	height: 4px;
 	background: linear-gradient(90deg, var(--purple), var(--blue) 50%, var(--pink));
+}
+
+.shell {
+	width: 100%;
+	max-width: 1320px;
+	margin-inline: auto;
+	padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+	.shell {
+		padding-inline: 2rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.shell {
+		padding-inline: 3rem;
+	}
+}
+
+.search-dialog {
+	width: min(36rem, calc(100vw - 2rem));
+	max-width: none;
+	margin: clamp(1rem, 10vh, 6rem) auto auto;
+	overflow: hidden;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: var(--background);
+	color: var(--foreground);
+	padding: 0;
+	box-shadow: 0 20px 50px rgb(0 0 0 / 20%);
+}
+
+.search-dialog::backdrop {
+	background: rgb(29 45 53 / 45%);
 }
 
 .display-face {
@@ -197,20 +218,11 @@ a[role="button"]:hover {
 	text-transform: uppercase;
 }
 
-.focus-ring:focus-visible,
 a:focus-visible,
 button:focus-visible,
-summary:focus-visible,
-input:focus-visible {
+summary:focus-visible {
 	outline: 2px solid var(--ring);
 	outline-offset: 2px;
-}
-
-.search-input:focus-visible {
-	border-color: transparent;
-	box-shadow: none;
-	outline: none;
-	outline-offset: 0;
 }
 
 .skip-link {
@@ -231,9 +243,9 @@ input:focus-visible {
 }
 
 .markdown-content {
-	color: var(--muted-foreground);
-	font-size: 1rem;
-	line-height: 1.65;
+	color: color-mix(in srgb, var(--foreground) 85%, var(--background));
+	font-size: 1.0625rem;
+	line-height: 1.7;
 }
 
 .markdown-content > * + * {
@@ -292,8 +304,11 @@ input:focus-visible {
 }
 
 .markdown-content a {
+	color: var(--primary);
 	font-weight: 500;
 	text-decoration: underline;
+	text-underline-offset: 0.2em;
+	overflow-wrap: anywhere;
 }
 
 .markdown-content a:hover {
@@ -326,7 +341,7 @@ input:focus-visible {
 	overflow-x: auto;
 	border: 1px solid var(--border);
 	border-radius: 0.25rem;
-	background: #212529;
+	background: #1a1d20;
 	padding: 1rem 1.1rem;
 	color: #dee2e6;
 	font-family: var(--font-mono), ui-monospace, monospace;

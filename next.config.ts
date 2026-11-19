@@ -1,12 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-	images: {
-		remotePatterns: [
-			{ protocol: "https", hostname: "raw.githubusercontent.com" },
-			{ protocol: "https", hostname: "images.unsplash.com" },
-		],
-	},
+	// Every content route and internal link ends in a slash, as the original Hugo site's URLs did.
+	trailingSlash: true,
 };
 
 export default nextConfig;

@@ -1,6 +1,12 @@
 import type { MetadataRoute } from "next";
-import { getAllContentPages } from "@/lib/content";
+import { getContent } from "@/lib/content";
+import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	return getAllContentPages().map((page) => ({ url: `https://www.devpill.me${page.route}`, lastModified: page.lastmod ?? page.date ?? new Date(), changeFrequency: page.section === "blog" ? "yearly" : "monthly", priority: page.route === "/" ? 1 : page.section === "docs" ? 0.8 : 0.6 }));
+	return [...getContent().pages.values()].map((page) => ({
+		url: `${site.url}${page.route}`,
+		lastModified: page.lastmod ?? page.date,
+		changeFrequency: page.kind === "post" ? "yearly" : "monthly",
+		priority: page.kind === "home" ? 1 : page.section ? 0.8 : 0.6,
+	}));
 }
