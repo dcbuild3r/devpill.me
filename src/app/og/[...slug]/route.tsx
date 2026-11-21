@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { ImageResponse } from "next/og";
+import { PillMark } from "@/components/layout/pill-mark";
 import { getContent, getPage, ogImagePath, type Page } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -34,12 +35,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ slu
 				<div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "56px 72px 60px" }}>
 					<div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 						<div style={{ display: "flex", alignItems: "center", fontSize: 34, fontWeight: 700 }}>
-							<svg width="48" height="48" viewBox="0 0 24 24" style={{ marginRight: 16 }}>
-								<g transform="rotate(-45 12 12)">
-									<rect x="2" y="7.5" width="20" height="9" rx="4.5" fill="#9f4fa9" />
-									<path d="M12 7.5h5.5a4.5 4.5 0 0 1 0 9H12z" fill="#d32e9d" />
-								</g>
-							</svg>
+							<PillMark size={48} purple="#9f4fa9" pink="#d32e9d" style={{ marginRight: 16 }} />
 							{site.name}
 						</div>
 						<div style={{ fontSize: 22, letterSpacing: 1, textTransform: "uppercase", color: "#9f4fa9" }}>{eyebrow(page)}</div>
