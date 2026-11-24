@@ -33,8 +33,7 @@ export function HeroCapsule() {
 	return (
 		<div className="relative mx-auto aspect-[3/2] w-full max-w-md">
 			<div
-				className="absolute inset-0 bg-contain bg-center bg-no-repeat"
-				style={{ backgroundImage: ready ? undefined : "url(/devpill-capsule.webp)" }}>
+				className={`absolute inset-0 bg-contain bg-center bg-no-repeat ${ready ? "" : "bg-[url(/devpill-capsule.webp)] dark:bg-[url(/devpill-capsule-dark.webp)]"}`}>
 				<canvas ref={canvas} tabIndex={ready ? 0 : undefined}
 					aria-label="Devpill capsule with code on the front and Ethereum on the reverse. Drag or use the arrow keys to rotate."
 					className="block size-full touch-pinch-zoom cursor-grab rounded-lg focus-visible:outline-2 focus-visible:outline-primary active:cursor-grabbing" />

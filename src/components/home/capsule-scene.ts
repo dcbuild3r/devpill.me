@@ -4,9 +4,10 @@ import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 const radius = 0.9;
 const barrel = 1.35;
 const halfLength = barrel + radius;
+const splitSlope = 0.38;
 
 // The artwork wraps once around the long axis. Half a revolution swaps the marks.
-function makePrint() {
+function makePrint(dark: boolean) {
 	const image = document.createElement("canvas");
 	image.width = 1536;
 	image.height = 2048;
@@ -18,7 +19,7 @@ function makePrint() {
 	const slash = new Path2D();
 	for (let i = 0; i <= 256; i++) {
 		const t = i / 256;
-		const x = width / 2 + (0.38 * radius * Math.cos(2 * Math.PI * t) * width) / (2 * halfLength);
+		const x = width / 2 + (splitSlope * radius * Math.cos(2 * Math.PI * t) * width) / (2 * halfLength);
 		if (i === 0) {
 			seam.moveTo(x, 0);
 			slash.moveTo(x, 0);
@@ -34,7 +35,7 @@ function makePrint() {
 	ctx.fillRect(0, 0, width, height);
 	ctx.fillStyle = "#fa128d";
 	ctx.fill(seam);
-	ctx.strokeStyle = "#191426";
+	ctx.strokeStyle = dark ? "#ffffff" : "#191426";
 	ctx.lineWidth = (0.135 * width) / (2 * halfLength);
 	ctx.stroke(slash);
 
@@ -42,7 +43,6 @@ function makePrint() {
 		ctx.setTransform(width / (2 * halfLength), 0, 0, height / (2 * Math.PI * radius), width / 2, height * angle);
 	}
 	face(0.25);
-	ctx.strokeStyle = "#191426";
 	ctx.lineWidth = 0.135;
 	ctx.lineJoin = "round";
 	ctx.lineCap = "round";
@@ -57,20 +57,25 @@ function makePrint() {
 
 	face(0.75);
 	ctx.rotate(Math.PI); // Keep the reverse upright after a half turn around Y.
-	function facet(color: string, points: number[][]) {
-		ctx.fillStyle = color;
+	// Lay the diamond out in the rear view, then unwrap its height onto the shell.
+	// Its spine follows x = splitSlope * y, the same plane as the color boundary.
+	const angle = Math.atan(splitSlope);
+	const cos = Math.cos(angle);
+	const sin = Math.sin(angle);
+	ctx.fillStyle = "#080808";
+	function polygon(points: [number, number][]) {
 		ctx.beginPath();
-		ctx.moveTo(points[0][0], points[0][1]);
-		for (const [x, y] of points.slice(1)) ctx.lineTo(x, y);
+		for (const [i, [x, y]] of points.entries()) {
+			const across = x * cos + y * sin;
+			const arc = radius * Math.asin((y * cos - x * sin) / radius);
+			if (i === 0) ctx.moveTo(across, arc);
+			else ctx.lineTo(across, arc);
+		}
 		ctx.closePath();
 		ctx.fill();
 	}
-	facet("#f6f5ff", [[0, -0.76], [-0.47, 0.04], [0, -0.16]]);
-	facet("#bcc1d7", [[0, -0.76], [0, -0.16], [0.47, 0.04]]);
-	facet("#8891ad", [[-0.47, 0.04], [0, -0.16], [0, 0.24]]);
-	facet("#565f79", [[0, -0.16], [0.47, 0.04], [0, 0.24]]);
-	facet("#e6e9f6", [[-0.47, 0.14], [0, 0.35], [0, 0.76]]);
-	facet("#989fb8", [[0, 0.35], [0.47, 0.14], [0, 0.76]]);
+	polygon([[0, -0.72], [0.46, 0.03], [0, 0.24], [-0.46, 0.03]]);
+	polygon([[-0.46, 0.13], [0, 0.34], [0.46, 0.13], [0, 0.72]]);
 
 	const texture = new THREE.CanvasTexture(image);
 	texture.colorSpace = THREE.SRGBColorSpace;
@@ -105,9 +110,10 @@ export function mountCapsule(canvas: HTMLCanvasElement) {
 		uv.setXY(i, (position.getY(i) + halfLength) / (2 * halfLength), 1 - uv.getX(i));
 	}
 	geometry.rotateZ(-Math.PI / 2);
-	const print = makePrint();
+	const root = document.documentElement;
+	let dark = root.classList.contains("dark");
 	const material = new THREE.MeshPhysicalMaterial({
-		map: print, roughness: 0.32, metalness: 0.08, clearcoat: 0.8, clearcoatRoughness: 0.18,
+		map: makePrint(dark), roughness: 0.32, metalness: 0.08, clearcoat: 0.8, clearcoatRoughness: 0.18,
 	});
 	const pill = new THREE.Mesh(geometry, material);
 	const pose = new THREE.Group();
@@ -195,6 +201,15 @@ export function mountCapsule(canvas: HTMLCanvasElement) {
 		renderer.setSize(width, height, false);
 		draw();
 	}
+	const theme = new MutationObserver(() => {
+		const nextDark = root.classList.contains("dark");
+		if (nextDark === dark) return;
+		dark = nextDark;
+		material.map?.dispose();
+		material.map = makePrint(dark);
+		draw();
+	});
+	theme.observe(root, { attributes: true, attributeFilter: ["class"] });
 	const size = new ResizeObserver(resize);
 	size.observe(canvas);
 	const visibility = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); });
@@ -206,12 +221,13 @@ export function mountCapsule(canvas: HTMLCanvasElement) {
 		dispose() {
 			cancelAnimationFrame(frame);
 			input.abort();
+			theme.disconnect();
 			size.disconnect();
 			visibility.disconnect();
 			document.removeEventListener("visibilitychange", sync);
 			geometry.dispose();
 			material.dispose();
-			print.dispose();
+			material.map?.dispose();
 			studio.dispose();
 			renderer.dispose();
 		},
