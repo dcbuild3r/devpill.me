@@ -4,7 +4,7 @@ import { GithubLogo, List, X } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { PillMark } from "@/components/layout/pill-mark";
+import { Logo } from "@/components/layout/logo";
 import { SiteSearch } from "@/components/layout/site-search";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { site } from "@/lib/site";
@@ -31,11 +31,11 @@ export function SiteHeader() {
 	);
 
 	return (
-		<header className="sticky top-0 z-50 border-b border-border bg-background">
+		<header className="sticky top-0 z-50 bg-background">
 			<div className="header-bar" aria-hidden="true" />
 			<nav className="shell flex min-h-[4.25rem] items-center gap-2" aria-label="Main navigation">
-				<Link href="/" translate="no" onClick={closeMenu} className="mr-4 inline-flex items-center gap-2.5 font-bold text-foreground">
-					<PillMark /> {site.name}
+				<Link href="/" translate="no" onClick={closeMenu} className="mr-4 inline-flex items-center">
+					<Logo height={30} />
 				</Link>
 				<div className="hidden items-center md:flex">{links("px-3 py-3 text-[0.9375rem] font-medium transition-colors")}</div>
 				<div className="ml-auto flex items-center gap-1">
@@ -50,7 +50,7 @@ export function SiteHeader() {
 				</div>
 			</nav>
 			{menuOpen ? (
-				<nav id="mobile-navigation" className="shell flex flex-col border-t border-border py-3 md:hidden" aria-label="Mobile navigation">
+				<nav id="mobile-navigation" className="shell flex flex-col py-3 md:hidden" aria-label="Mobile navigation">
 					{links("py-3 text-base font-medium")}
 				</nav>
 			) : null}

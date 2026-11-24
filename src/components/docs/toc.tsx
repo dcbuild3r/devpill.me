@@ -25,10 +25,10 @@ export function TableOfContents({ headings }: { headings: Heading[] }) {
 	return (
 		<nav aria-label="On this page">
 			<p className="eyebrow text-muted-foreground">On this page</p>
-			<ul className="mt-3 border-l border-border">
+			<ul className="mt-3">
 				{headings.map((heading) => (
 					<li key={heading.id}>
-						<a href={`#${heading.id}`} className={`-ml-px block border-l-2 py-1.5 text-sm leading-5 ${heading.depth === 3 ? "pl-7" : "pl-4"} ${heading.id === activeId ? "border-primary font-medium text-primary" : "border-transparent text-muted-foreground hover:text-foreground"}`}>
+						<a href={`#${heading.id}`} className={`block border-l-2 py-1.5 text-sm leading-5 ${heading.depth === 3 ? "pl-7" : "pl-4"} ${heading.id === activeId ? "border-primary font-medium text-primary" : "border-transparent text-muted-foreground hover:text-foreground"}`}>
 							{heading.title}
 						</a>
 					</li>

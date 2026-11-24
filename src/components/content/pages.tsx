@@ -32,15 +32,16 @@ export function BlogIndex({ page, posts }: { page: Page; posts: Page[] }) {
 	return (
 		<div className="shell max-w-[960px] py-12 lg:py-16">
 			<PageHeader eyebrow="Changelog" page={page} />
-			<ul className="mt-12 border-t border-border">
+			<ul className="mt-12">
 				{posts.map((post) => (
 					<li key={post.route}>
-						<Link href={post.route} className="group flex flex-col gap-x-8 gap-y-2 border-b border-border py-7 sm:flex-row sm:items-baseline">
+						<Link href={post.route} className="group flex flex-col gap-x-8 gap-y-2 py-7 sm:flex-row sm:items-baseline">
 							{post.date ? <time dateTime={post.date} className="w-36 shrink-0 font-mono text-sm text-muted-foreground">{formatDate(post.date, "short")}</time> : null}
 							<span className="min-w-0 flex-1">
-								<span className="block text-2xl font-bold leading-tight tracking-[-0.02em] text-foreground group-hover:text-primary">{post.title}</span>
+								<span className="font-heading block text-2xl font-bold leading-tight tracking-[-0.02em] text-foreground group-hover:text-primary">{post.title}</span>
 								<span className="mb-3 mt-2 block text-[1.0625rem] leading-7 text-muted-foreground">{post.lead || post.description}</span>
-								<Byline page={post} />
+								{/* Plain text: a profile link here would nest a link inside the post link. */}
+									<span className="text-sm text-muted-foreground">{[...post.contributors, `${post.readingTime} min read`].join(" · ")}</span>
 							</span>
 							<ArrowRight size={20} weight="bold" className="hidden shrink-0 self-center text-primary sm:block" aria-hidden="true" />
 						</Link>
@@ -77,7 +78,7 @@ export function ArticlePage({ page, back }: { page: Page; back?: { href: string;
 			{back ? <Link href={back.href} className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary"><ArrowLeft size={15} weight="bold" /> {back.label}</Link> : null}
 			<PageHeader page={page.kind === "contributor" ? { ...page, description: "" } : page} />
 			{isPost ? (
-				<div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-border py-3 text-sm text-muted-foreground">
+				<div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 py-3 text-sm text-muted-foreground">
 					{page.date ? <time dateTime={page.date}>{formatDate(page.date)}</time> : null}
 					<Byline page={page} />
 				</div>

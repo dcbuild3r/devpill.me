@@ -1,4 +1,4 @@
-import { BookOpen, CaretRight } from "@phosphor-icons/react/dist/ssr";
+import { BookOpen } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import { DocsSidebar } from "@/components/docs/docs-sidebar";
 import { GuideTracks } from "@/components/docs/guide-tracks";
@@ -9,7 +9,7 @@ import { formatDate } from "@/lib/utils";
 
 function PageList({ pages }: { pages: Page[] }) {
 	return (
-		<ol className="mt-10 divide-y divide-border rounded border border-border">
+		<ol className="mt-10 rounded border border-border">
 			{pages.map((item, index) => (
 				<li key={item.route}>
 					<Link href={item.route} className="group flex items-center gap-4 px-5 py-4 transition-colors hover:bg-muted">
@@ -55,7 +55,7 @@ export function DocsPage({ page, tracks }: { page: Page; tracks: Track[] }) {
 		<div className="shell py-8 lg:py-12">
 			<details className="mb-6 rounded border border-border lg:hidden">
 				<summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-sm font-semibold [&::-webkit-details-marker]:hidden"><BookOpen size={17} /> Browse the guide</summary>
-				<div className="border-t border-border p-4"><DocsSidebar tracks={tracks} current={page} /></div>
+				<div className="px-4 pb-4"><DocsSidebar tracks={tracks} current={page} /></div>
 			</details>
 			<div className="grid gap-12 lg:grid-cols-[16.5rem_minmax(0,1fr)] xl:grid-cols-[16.5rem_minmax(0,1fr)_13rem]">
 				<aside className="hidden lg:sticky lg:top-[6.75rem] lg:block lg:max-h-[calc(100vh-8rem)] lg:self-start lg:overflow-y-auto lg:pr-2">
@@ -64,8 +64,8 @@ export function DocsPage({ page, tracks }: { page: Page; tracks: Track[] }) {
 				<article className="min-w-0 max-w-3xl">
 					<nav className="flex flex-wrap items-center gap-2 font-mono text-[0.8125rem] text-muted-foreground" aria-label="Breadcrumb">
 						<Link href="/docs/" className="hover:text-primary">Guide</Link>
-						{section ? <><CaretRight size={11} aria-hidden="true" /><Link href={section.page.route} className="hover:text-primary">{section.page.title}</Link></> : null}
-						{isDoc ? <><CaretRight size={11} aria-hidden="true" /><span className="text-foreground">{page.title}</span></> : null}
+						{section ? <><span aria-hidden="true">/</span><Link href={section.page.route} className="hover:text-primary">{section.page.title}</Link></> : null}
+						{isDoc ? <><span aria-hidden="true">/</span><span className="text-foreground">{page.title}</span></> : null}
 					</nav>
 					<h1 className="display-face mt-6 text-4xl font-bold leading-[1.1] sm:text-5xl">{page.kind === "docs-home" ? "The guide" : page.title}</h1>
 					{page.kind === "docs-home" ? (
@@ -79,7 +79,7 @@ export function DocsPage({ page, tracks }: { page: Page; tracks: Track[] }) {
 					{page.kind === "section" && section ? <PageList pages={section.pages} /> : null}
 					{isDoc ? (
 						<>
-							<div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-border py-3 text-sm text-muted-foreground">
+							<div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 py-3 text-sm text-muted-foreground">
 								<span>{page.readingTime} min read</span>
 								{updated ? <span>Updated <time dateTime={updated}>{formatDate(updated)}</time></span> : null}
 								<a href={editUrl(page)} target="_blank" rel="noreferrer" className="font-semibold text-primary hover:underline sm:ml-auto">Edit this page on GitHub</a>

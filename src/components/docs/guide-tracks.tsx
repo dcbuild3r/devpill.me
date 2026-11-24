@@ -6,10 +6,7 @@ export function GuideTracks({ tracks }: { tracks: Track[] }) {
 		<div className="space-y-12">
 			{tracks.map((track) => (
 				<section key={track.name} aria-label={track.name}>
-					<div className="flex items-center gap-4">
-						<h3 className="eyebrow text-primary">{track.name}</h3>
-						<span className="h-px flex-1 bg-border" aria-hidden="true" />
-					</div>
+					<h3 className="eyebrow text-primary">{track.name}</h3>
 					<div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
 						{track.sections.map((section) => (
 							<Link key={section.page.route} href={section.page.route} className="group flex min-h-36 flex-col rounded border border-border p-5 transition-colors hover:border-primary">

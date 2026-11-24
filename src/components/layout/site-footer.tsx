@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PillMark } from "@/components/layout/pill-mark";
+import { Logo } from "@/components/layout/logo";
 import { site } from "@/lib/site";
 
 const columns = [
@@ -10,10 +10,10 @@ const columns = [
 
 export function SiteFooter() {
 	return (
-		<footer className="border-t border-border bg-muted">
+		<footer className="bg-muted">
 			<div className="shell flex flex-col justify-between gap-10 py-12 text-[0.9375rem] text-muted-foreground md:flex-row">
 				<div className="max-w-sm">
-					<span className="inline-flex items-center gap-2.5 text-lg font-bold text-foreground"><PillMark size={24} /> {site.name}</span>
+					<Logo height={26} />
 					<p className="mt-3 leading-6">
 						A public-good guide for curious builders. Built by{" "}
 						<a className="font-semibold text-foreground underline" href={site.author.url} target="_blank" rel="noreferrer">{site.author.name}</a>.
