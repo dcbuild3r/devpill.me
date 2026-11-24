@@ -7,7 +7,7 @@ const halfLength = barrel + radius;
 const splitSlope = 0.38;
 
 // The artwork wraps once around the long axis. Half a revolution swaps the marks.
-function makePrint(dark: boolean) {
+function makePrint(dark: boolean, finish?: CanvasRenderingContext2D) {
 	const image = document.createElement("canvas");
 	image.width = 1536;
 	image.height = 2048;
@@ -62,20 +62,44 @@ function makePrint(dark: boolean) {
 	const angle = Math.atan(splitSlope);
 	const cos = Math.cos(angle);
 	const sin = Math.sin(angle);
-	ctx.fillStyle = "#080808";
-	function polygon(points: [number, number][]) {
-		ctx.beginPath();
+	type Point = [number, number];
+	const tip: Point = [0, -0.72], ridge: Point = [0, -0.15], base: Point = [0, 0.24];
+	const left: Point = [-0.46, 0.03], right: Point = [0.46, 0.03];
+	const notch: Point = [0, 0.34], bottom: Point = [0, 0.72];
+	const lowerLeft: Point = [-0.46, 0.13], lowerRight: Point = [0.46, 0.13];
+	if (finish) {
+		// Three.js reads clearcoat from red and roughness from green.
+		// Matte ink keeps the studio highlight from bleaching the facet boundaries.
+		finish.fillStyle = "rgb(255 82 0)";
+		finish.fillRect(0, 0, finish.canvas.width, finish.canvas.height);
+		const scale = new DOMMatrix().scale(finish.canvas.width / width, finish.canvas.height / height);
+		finish.setTransform(scale.multiply(ctx.getTransform()));
+		finish.fillStyle = finish.strokeStyle = "rgb(0 235 0)";
+		finish.lineWidth = 0.012;
+	}
+	ctx.strokeStyle = dark ? "#7b8092" : "#22242b";
+	ctx.lineWidth = 0.012;
+	function facet(lightInk: string, darkInk: string, ...points: Point[]) {
+		ctx.fillStyle = dark ? darkInk : lightInk;
+		const path = new Path2D();
 		for (const [i, [x, y]] of points.entries()) {
 			const across = x * cos + y * sin;
 			const arc = radius * Math.asin((y * cos - x * sin) / radius);
-			if (i === 0) ctx.moveTo(across, arc);
-			else ctx.lineTo(across, arc);
+			if (i === 0) path.moveTo(across, arc);
+			else path.lineTo(across, arc);
 		}
-		ctx.closePath();
-		ctx.fill();
+		path.closePath();
+		ctx.fill(path);
+		ctx.stroke(path);
+		finish?.fill(path);
+		finish?.stroke(path);
 	}
-	polygon([[0, -0.72], [0.46, 0.03], [0, 0.24], [-0.46, 0.03]]);
-	polygon([[-0.46, 0.13], [0, 0.34], [0.46, 0.13], [0, 0.72]]);
+	facet("#6c707b", "#ffffff", tip, left, ridge);
+	facet("#393c45", "#c6cad5", tip, ridge, right);
+	facet("#424651", "#adb3c3", left, ridge, base);
+	facet("#191b22", "#8b92a4", ridge, right, base);
+	facet("#616570", "#edf0f7", lowerLeft, notch, bottom);
+	facet("#2b2e37", "#b3b9ca", notch, lowerRight, bottom);
 
 	const texture = new THREE.CanvasTexture(image);
 	texture.colorSpace = THREE.SRGBColorSpace;
@@ -112,8 +136,14 @@ export function mountCapsule(canvas: HTMLCanvasElement) {
 	geometry.rotateZ(-Math.PI / 2);
 	const root = document.documentElement;
 	let dark = root.classList.contains("dark");
+	const finishCanvas = document.createElement("canvas");
+	finishCanvas.width = 384;
+	finishCanvas.height = 512;
+	const print = makePrint(dark, finishCanvas.getContext("2d")!);
+	const finish = new THREE.CanvasTexture(finishCanvas);
+	finish.wrapT = THREE.RepeatWrapping;
 	const material = new THREE.MeshPhysicalMaterial({
-		map: makePrint(dark), roughness: 0.32, metalness: 0.08, clearcoat: 0.8, clearcoatRoughness: 0.18,
+		map: print, roughnessMap: finish, clearcoatMap: finish, roughness: 1, metalness: 0.08, clearcoat: 0.8, clearcoatRoughness: 0.18,
 	});
 	const pill = new THREE.Mesh(geometry, material);
 	const pose = new THREE.Group();
@@ -226,6 +256,7 @@ export function mountCapsule(canvas: HTMLCanvasElement) {
 			visibility.disconnect();
 			document.removeEventListener("visibilitychange", sync);
 			geometry.dispose();
+			finish.dispose();
 			material.dispose();
 			material.map?.dispose();
 			studio.dispose();
