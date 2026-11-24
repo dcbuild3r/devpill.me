@@ -38,11 +38,12 @@ test("links to devpill.me inside the content resolve to a page", () => {
 });
 
 test("repeated headings get unique ids", () => {
-	const { headings } = renderMarkdown("## Tools\n\n### `Foundry` setup\n\n## Tools\n\n```\n## not a heading\n```");
+	const { headings } = renderMarkdown("## Tools\n\n### `Foundry` setup\n\n## Tools\n\n## Tools-1\n\n```\n## not a heading\n```");
 	expect(headings).toEqual([
 		{ depth: 2, title: "Tools", id: "tools" },
 		{ depth: 3, title: "Foundry setup", id: "foundry-setup" },
 		{ depth: 2, title: "Tools", id: "tools-1" },
+		{ depth: 2, title: "Tools-1", id: "tools-1-1" },
 	]);
 });
 

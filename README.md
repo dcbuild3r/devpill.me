@@ -4,7 +4,7 @@ devpill.me is a public-good blockchain development guide for people who want to 
 
 ## Stack
 
-The site is a Next.js 16 App Router application built with React 19 and TypeScript. Bun is used for dependency management and scripts. The interface uses Tailwind CSS 4, shadcn/ui components built on Radix UI primitives, next-themes for light and dark mode, and Lucide and Phosphor icons.
+The site is a Next.js 16 App Router application built with React 19 and TypeScript. Bun is used for dependency management and scripts. The interface uses Tailwind CSS 4, next-themes for light and dark mode, and Phosphor icons.
 
 Guide content lives in Markdown files under `content/en/`. gray-matter parses front matter, while react-markdown and remark-gfm render the article content. Next.js generates the content routes at build time, and the site is deployed on Vercel.
 

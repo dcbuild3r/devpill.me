@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import matter from "gray-matter";
+import { parse } from "yaml";
 import { site } from "@/lib/site";
 
 const contentDir = path.join("content", "en");
@@ -72,8 +72,30 @@ function titleFromSlug(slug: string) {
 	return slug.replace(/[-_]+/g, " ").replace(/\b\w/g, (character) => character.toUpperCase());
 }
 
+function readFrontMatter(source: string, sourcePath: string) {
+	const opening = /^\uFEFF?---[ \t]*\r?\n/.exec(source);
+	if (!opening) return { data: {}, content: source };
+
+	const rest = source.slice(opening[0].length);
+	const closing = /^---[ \t]*(?:\r?\n|$)/m.exec(rest);
+	if (!closing) throw new Error(`Unclosed YAML front matter in ${sourcePath}`);
+
+	const metadata: unknown = parse(rest.slice(0, closing.index), {
+		customTags: ["timestamp"],
+		maxAliasCount: 0,
+	});
+	if (metadata != null && (typeof metadata !== "object" || Array.isArray(metadata))) {
+		throw new Error(`Expected a YAML mapping in ${sourcePath}`);
+	}
+
+	return {
+		data: (metadata ?? {}) as Record<string, unknown>,
+		content: rest.slice(closing.index + closing[0].length),
+	};
+}
+
 function parsePage(sourcePath: string): Page[] {
-	const { data, content } = matter(fs.readFileSync(sourcePath, "utf8"));
+	const { data, content } = readFrontMatter(fs.readFileSync(sourcePath, "utf8"), sourcePath);
 	if (data.draft === true || data.draft === "true") return [];
 
 	const segments = path.relative(contentDir, sourcePath).split(path.sep);
@@ -85,14 +107,14 @@ function parsePage(sourcePath: string): Page[] {
 		kind: kindOf(segments),
 		route: segments.length ? `/${segments.join("/")}/` : "/",
 		segments,
-		title: data.title ?? titleFromSlug(segments.at(-1) ?? site.name),
-		description: data.description ?? "",
-		lead: data.lead ?? "",
+		title: typeof data.title === "string" ? data.title : titleFromSlug(segments.at(-1) ?? site.name),
+		description: typeof data.description === "string" ? data.description : "",
+		lead: typeof data.lead === "string" ? data.lead : "",
 		body,
 		date: isoDate(data.date),
 		lastmod: isoDate(data.lastmod),
 		weight: Number(data.weight ?? 999),
-		contributors: data.contributors ?? [],
+		contributors: Array.isArray(data.contributors) ? data.contributors.filter((name): name is string => typeof name === "string") : [],
 		readingTime: Math.max(1, Math.ceil(body.split(/\s+/).filter(Boolean).length / 220)),
 		sourcePath: sourcePath.split(path.sep).join("/"),
 	}];

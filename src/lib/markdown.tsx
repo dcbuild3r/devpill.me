@@ -16,7 +16,7 @@ function slugify(value: string) {
 /** Gives every h2-h4 a unique id and records it, so the table of contents and search read the ids that were rendered. */
 function headingIds(headings: Heading[]) {
 	return () => (tree: Root) => {
-		const seen = new Map<string, number>();
+		const ids = new Set<string>();
 		const visit = (node: Root | Element) => {
 			for (const child of node.children) {
 				if (child.type !== "element") continue;
@@ -24,9 +24,11 @@ function headingIds(headings: Heading[]) {
 				if (depth) {
 					const title = textOf(child);
 					const base = slugify(title) || "section";
-					const count = seen.get(base) ?? 0;
-					seen.set(base, count + 1);
-					const id = count ? `${base}-${count}` : base;
+					let id = base;
+					for (let suffix = 1; ids.has(id); suffix++) {
+						id = `${base}-${suffix}`;
+					}
+					ids.add(id);
 					child.properties.id = id;
 					headings.push({ depth: Number(depth), title, id });
 				}

@@ -1,9 +1,9 @@
 "use client";
 
-import { MagnifyingGlass } from "@phosphor-icons/react";
+import { MagnifyingGlass, X } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { search, type SearchEntry } from "@/lib/search";
 
 function isEditable(target: EventTarget | null) {
@@ -14,27 +14,31 @@ export function SiteSearch() {
 	const router = useRouter();
 	const dialog = useRef<HTMLDialogElement>(null);
 	const requested = useRef(false);
-	const [entries, setEntries] = useState<SearchEntry[]>([]);
+	const [entries, setEntries] = useState<SearchEntry[] | null>(null);
+	const [loadError, setLoadError] = useState(false);
 	const [query, setQuery] = useState("");
 	const [active, setActive] = useState(0);
-	const results = search(entries, query);
+	const results = entries ? search(entries, query) : [];
 
-	const load = () => {
+	const load = useCallback(async () => {
 		if (requested.current) return;
 		requested.current = true;
-		fetch("/search.json")
-			.then((response) => response.json())
-			.then(setEntries)
-			.catch(() => {
-				requested.current = false;
-			});
-	};
-	const open = () => {
-		load();
+		setLoadError(false);
+		try {
+			const response = await fetch("/search.json");
+			if (!response.ok) throw new Error("Search index unavailable");
+			const entries: SearchEntry[] = await response.json();
+			setEntries(entries);
+		} catch {
+			requested.current = false;
+			setLoadError(true);
+		}
+	}, []);
+	const open = useCallback(() => {
+		void load();
 		if (!dialog.current?.open) dialog.current?.showModal();
-	};
-	const close = () => dialog.current?.close();
-
+	}, [load]);
+	const close = useCallback(() => dialog.current?.close(), []);
 	useEffect(() => {
 		const onKeyDown = (event: KeyboardEvent) => {
 			const isShortcut = event.key.toLowerCase() === "k" && (event.metaKey || event.ctrlKey);
@@ -45,9 +49,7 @@ export function SiteSearch() {
 		};
 		document.addEventListener("keydown", onKeyDown);
 		return () => document.removeEventListener("keydown", onKeyDown);
-		// open and close only touch refs and stable setters.
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [close, open]);
 
 	const onInputKeyDown = (event: React.KeyboardEvent) => {
 		if (event.key === "ArrowDown" || event.key === "ArrowUp") {
@@ -97,7 +99,9 @@ export function SiteSearch() {
 						placeholder="Search sections, topics, and pages…"
 						className="h-14 w-full bg-transparent text-base outline-none placeholder:text-muted-foreground"
 					/>
-					<kbd className="rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[11px] text-muted-foreground">Esc</kbd>
+					<button type="button" onClick={close} aria-label="Close search" className="inline-flex size-11 shrink-0 items-center justify-center rounded text-muted-foreground hover:bg-muted hover:text-foreground">
+						<X size={18} aria-hidden="true" />
+					</button>
 				</div>
 				<div id="search-results" role="listbox" aria-label="Results" className="max-h-[min(26rem,calc(100dvh-12rem))] overflow-y-auto overscroll-contain p-2">
 					{results.map((entry, index) => (
@@ -109,8 +113,15 @@ export function SiteSearch() {
 							{entry.description ? <span className="mt-0.5 line-clamp-1 block text-sm text-muted-foreground">{entry.description}</span> : null}
 						</Link>
 					))}
-					{results.length ? null : <p className="px-3 py-8 text-center text-sm text-muted-foreground">{entries.length ? "No notes found. Try a broader search." : "Loading the guide…"}</p>}
 				</div>
+				{results.length === 0 && (
+					<div className="px-3 pb-8 pt-4 text-center text-sm text-muted-foreground">
+						<p role="status">
+							{loadError ? "Could not load the guide. Try again." : entries ? "No notes found. Try a broader search." : "Loading the guide…"}
+						</p>
+						{loadError && <button type="button" onClick={load} className="mt-2 min-h-11 px-3 font-semibold text-primary underline">Retry</button>}
+					</div>
+				)}
 			</dialog>
 		</>
 	);

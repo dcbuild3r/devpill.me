@@ -14,7 +14,12 @@ export const metadata: Metadata = {
 	title: { default: `${site.name} - ${site.tagline}`, template: `%s | ${site.name}` },
 	description: site.description,
 	metadataBase: new URL(site.url),
-	icons: { icon: "/pill.png" },
+	icons: {
+		icon: [
+			{ url: "/icon-light.png", type: "image/png", sizes: "320x320", media: "(prefers-color-scheme: light)" },
+			{ url: "/icon-dark.png", type: "image/png", sizes: "320x320", media: "(prefers-color-scheme: dark)" },
+		],
+	},
 	robots: { index: true, follow: true },
 };
 
