@@ -55,7 +55,10 @@ export function SiteSearch() {
 		if (event.key === "ArrowDown" || event.key === "ArrowUp") {
 			event.preventDefault();
 			const step = event.key === "ArrowDown" ? 1 : -1;
-			setActive((current) => (current + step + results.length) % Math.max(results.length, 1));
+			if (!results.length) return;
+			const next = (active + step + results.length) % results.length;
+			setActive(next);
+			document.getElementById(`search-result-${next}`)?.scrollIntoView({ block: "nearest" });
 		} else if (event.key === "Enter" && results[active]) {
 			router.push(results[active].route);
 			close();
