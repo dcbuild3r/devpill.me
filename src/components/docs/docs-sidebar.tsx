@@ -1,38 +1,35 @@
-import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
-import type { DocSection } from "@/lib/content";
-import { GuideSearch } from "@/components/docs/guide-search";
+import type { Page, Track } from "@/lib/content";
 
-export function DocsSidebar({ navigation, currentRoute }: { navigation: DocSection[]; currentRoute: string }) {
+export function DocsSidebar({ tracks, current }: { tracks: Track[]; current: Page }) {
+	const item = (page: Page, label: string) => {
+		const active = page.route === current.route;
+		return (
+			<Link key={page.route} href={page.route} aria-current={active ? "page" : undefined} className={`block border-l-2 px-4 py-2 text-[0.9375rem] ${active ? "border-primary font-semibold text-primary" : "border-transparent text-muted-foreground hover:text-foreground"}`}>
+				{label}
+			</Link>
+		);
+	};
+
 	return (
-		<aside className="lg:sticky lg:top-[6.75rem] lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-4">
-			<GuideSearch />
-			<nav className="mt-6" aria-label="Guide navigation">
-				<Link href="/docs/" className={`mb-4 flex items-center justify-between rounded px-3 py-2 text-sm font-semibold no-underline transition-colors ${currentRoute === "/docs/" ? "bg-muted text-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}>
-					<span>All sections</span><span className="eyebrow text-muted-foreground">{navigation.length}</span>
-				</Link>
-				<div className="space-y-1">
-					{navigation.map((section) => {
-						const isCurrent = currentRoute === section.route || section.items.some((item) => item.route === currentRoute);
-						return (
-							<details key={section.route} open={isCurrent} className="group rounded">
-								<summary className="flex cursor-pointer list-none items-center justify-between rounded px-3 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted [&::-webkit-details-marker]:hidden">
-									<span className="flex items-center gap-2"><CaretDown size={14} weight="bold" />{section.title}</span>
-									<span className="eyebrow text-muted-foreground">{section.items.length}</span>
-								</summary>
-								<div className="ml-3 border-l border-border pl-4 pb-2 pt-1">
-									<Link href={section.route} className={`block rounded px-3 py-2 text-sm no-underline ${currentRoute === section.route ? "bg-accent font-semibold text-accent-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}>Overview</Link>
-									{section.items.map((item) => (
-										<Link key={item.route} href={item.route} className={`block rounded px-3 py-2 text-sm no-underline ${currentRoute === item.route ? "bg-accent font-semibold text-accent-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground"}`}>
-											{item.title}
-										</Link>
-									))}
-								</div>
-							</details>
-						);
-					})}
+		<nav aria-label="Guide navigation" className="space-y-7">
+			{tracks.map((track) => (
+				<div key={track.name}>
+					<p className="eyebrow mb-2 px-3 text-primary">{track.name}</p>
+					{track.sections.map((section) => (
+						<details key={section.page.route} open={section.page.route === current.section?.page.route}>
+							<summary className="flex min-h-10 cursor-pointer list-none items-center justify-between rounded px-3 py-2 text-[0.9375rem] font-semibold transition-colors hover:bg-muted [&::-webkit-details-marker]:hidden">
+								{section.page.title}
+								<span className="font-mono text-xs font-normal text-muted-foreground">{section.pages.length}</span>
+							</summary>
+							<div className="mb-2 ml-3 mt-0.5">
+								{item(section.page, "Overview")}
+								{section.pages.map((page) => item(page, page.title))}
+							</div>
+						</details>
+					))}
 				</div>
-			</nav>
-		</aside>
+			))}
+		</nav>
 	);
 }

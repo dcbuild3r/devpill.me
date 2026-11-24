@@ -1,27 +1,25 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@utility action-link {
+	@apply inline-flex shrink-0 items-center justify-center rounded border border-transparent font-semibold whitespace-nowrap transition-colors active:translate-y-px;
+}
 
 :root {
 	color-scheme: light;
 	--background: #fff;
 	--foreground: #1d2d35;
-	--card: #fff;
-	--card-foreground: #1d2d35;
-	--popover: #fff;
-	--popover-foreground: #1d2d35;
+
 	--primary: #9f4fa9;
 	--primary-foreground: #fff;
-	--secondary: #f8f9fa;
-	--secondary-foreground: #1d2d35;
+
 	--muted: #f8f9fa;
-	--muted-foreground: #6c757d;
+	--muted-foreground: #5f6770;
 	--accent: #fcfaff;
 	--accent-foreground: #9f4fa9;
-	--destructive: #b42318;
+
 	--border: #e9ecef;
 	--input: #ced4da;
 	--ring: #8ed6fb;
@@ -32,80 +30,47 @@
 	--purple: #9f4fa9;
 	--pink: #d32e9d;
 	--blue: #8ed6fb;
-	--font-jost: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	--font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	--chart-1: #9f4fa9;
-	--chart-2: #8ed6fb;
-	--chart-3: #d32e9d;
-	--chart-4: #6c757d;
-	--chart-5: #1d2d35;
-	--sidebar: #fff;
-	--sidebar-foreground: #1d2d35;
-	--sidebar-primary: #9f4fa9;
-	--sidebar-primary-foreground: #fff;
-	--sidebar-accent: #fcfaff;
-	--sidebar-accent-foreground: #9f4fa9;
-	--sidebar-border: #e9ecef;
-	--sidebar-ring: #8ed6fb;
+
 }
 
 .dark {
 	color-scheme: dark;
-	--background: #212529;
-	--foreground: #dee2e6;
-	--card: #212529;
-	--card-foreground: #dee2e6;
-	--popover: #212529;
-	--popover-foreground: #dee2e6;
-	--primary: #8ed6fb;
-	--primary-foreground: #212529;
-	--secondary: #343a40;
-	--secondary-foreground: #dee2e6;
-	--muted: #343a40;
-	--muted-foreground: #adb5bd;
-	--accent: #343a40;
-	--accent-foreground: #8ed6fb;
-	--destructive: #f97066;
-	--border: #343a40;
-	--input: #495057;
+	--background: #0e1217;
+	--foreground: #e8edf1;
+
+	--primary: #c98ad2;
+	--primary-foreground: #0e1217;
+
+	--muted: #151b22;
+	--muted-foreground: #9aa4ae;
+	--accent: #1a1622;
+	--accent-foreground: #c98ad2;
+
+	--border: #252d35;
+	--input: #36404a;
 	--ring: #8ed6fb;
 	--signal: #d32e9d;
-	--signal-soft: #343a40;
+	--signal-soft: #1a1622;
 	--cyan: #8ed6fb;
-	--purple: #c084cc;
-	--pink: #e36ab8;
+	--purple: #c98ad2;
+	--pink: #d32e9d;
 	--blue: #8ed6fb;
-	--chart-1: #c084cc;
-	--chart-2: #8ed6fb;
-	--chart-3: #e36ab8;
-	--chart-4: #adb5bd;
-	--chart-5: #dee2e6;
-	--sidebar: #212529;
-	--sidebar-foreground: #dee2e6;
-	--sidebar-primary: #8ed6fb;
-	--sidebar-primary-foreground: #212529;
-	--sidebar-accent: #343a40;
-	--sidebar-accent-foreground: #8ed6fb;
-	--sidebar-border: #343a40;
-	--sidebar-ring: #8ed6fb;
+
 }
 
 @theme inline {
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
-	--color-card: var(--card);
-	--color-card-foreground: var(--card-foreground);
-	--color-popover: var(--popover);
-	--color-popover-foreground: var(--popover-foreground);
+
 	--color-primary: var(--primary);
 	--color-primary-foreground: var(--primary-foreground);
-	--color-secondary: var(--secondary);
-	--color-secondary-foreground: var(--secondary-foreground);
+
 	--color-muted: var(--muted);
 	--color-muted-foreground: var(--muted-foreground);
 	--color-accent: var(--accent);
 	--color-accent-foreground: var(--accent-foreground);
-	--color-destructive: var(--destructive);
+
 	--color-border: var(--border);
 	--color-input: var(--input);
 	--color-ring: var(--ring);
@@ -115,25 +80,13 @@
 	--color-purple: var(--purple);
 	--color-pink: var(--pink);
 	--color-blue: var(--blue);
-	--font-heading: var(--font-jost);
-	--font-sans: var(--font-jost);
+	--font-heading: var(--font-display), var(--font-body), system-ui, sans-serif;
+	--font-sans: var(--font-body), system-ui, sans-serif;
 	--radius-sm: calc(var(--radius) * 0.75);
 	--radius-md: var(--radius);
 	--radius-lg: calc(var(--radius) * 1.5);
 	--radius-xl: calc(var(--radius) * 2);
-	--color-sidebar-ring: var(--sidebar-ring);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar: var(--sidebar);
-	--color-chart-5: var(--chart-5);
-	--color-chart-4: var(--chart-4);
-	--color-chart-3: var(--chart-3);
-	--color-chart-2: var(--chart-2);
-	--color-chart-1: var(--chart-1);
+
 }
 
 * {
@@ -148,7 +101,7 @@ html {
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: var(--font-jost), system-ui, sans-serif;
+	font-family: var(--font-body), system-ui, sans-serif;
 	text-rendering: optimizeLegibility;
 }
 
@@ -161,21 +114,6 @@ h6 {
 	text-wrap: balance;
 }
 
-a:not([class]) {
-	color: var(--primary);
-	text-underline-offset: 0.2em;
-}
-
-a:not([class]):hover,
-a:not([class]):focus-visible {
-	text-decoration: underline;
-}
-
-button a:hover,
-a[role="button"]:hover {
-	text-decoration: none;
-}
-
 ::selection {
 	background: rgb(211 46 157 / 30%);
 }
@@ -185,7 +123,44 @@ a[role="button"]:hover {
 	background: linear-gradient(90deg, var(--purple), var(--blue) 50%, var(--pink));
 }
 
+.shell {
+	width: 100%;
+	max-width: 1320px;
+	margin-inline: auto;
+	padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+	.shell {
+		padding-inline: 2rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.shell {
+		padding-inline: 3rem;
+	}
+}
+
+.search-dialog {
+	width: min(36rem, calc(100vw - 2rem));
+	max-width: none;
+	margin: clamp(1rem, 10vh, 6rem) auto auto;
+	overflow: hidden;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: var(--background);
+	color: var(--foreground);
+	padding: 0;
+	box-shadow: 0 20px 50px rgb(0 0 0 / 20%);
+}
+
+.search-dialog::backdrop {
+	background: rgb(29 45 53 / 45%);
+}
+
 .display-face {
+	font-family: var(--font-display), var(--font-body), system-ui, sans-serif;
 	letter-spacing: -0.035em;
 }
 
@@ -197,20 +172,11 @@ a[role="button"]:hover {
 	text-transform: uppercase;
 }
 
-.focus-ring:focus-visible,
 a:focus-visible,
 button:focus-visible,
-summary:focus-visible,
-input:focus-visible {
+summary:focus-visible {
 	outline: 2px solid var(--ring);
 	outline-offset: 2px;
-}
-
-.search-input:focus-visible {
-	border-color: transparent;
-	box-shadow: none;
-	outline: none;
-	outline-offset: 0;
 }
 
 .skip-link {
@@ -231,9 +197,9 @@ input:focus-visible {
 }
 
 .markdown-content {
-	color: var(--muted-foreground);
-	font-size: 1rem;
-	line-height: 1.65;
+	color: color-mix(in srgb, var(--foreground) 85%, var(--background));
+	font-size: 1.0625rem;
+	line-height: 1.7;
 }
 
 .markdown-content > * + * {
@@ -244,7 +210,7 @@ input:focus-visible {
 .markdown-content h3,
 .markdown-content h4 {
 	color: var(--foreground);
-	font-family: var(--font-jost), system-ui, sans-serif;
+	font-family: var(--font-display), var(--font-body), system-ui, sans-serif;
 	font-weight: 700;
 	line-height: 1.25;
 	scroll-margin-top: 6rem;
@@ -292,8 +258,11 @@ input:focus-visible {
 }
 
 .markdown-content a {
+	color: var(--primary);
 	font-weight: 500;
 	text-decoration: underline;
+	text-underline-offset: 0.2em;
+	overflow-wrap: anywhere;
 }
 
 .markdown-content a:hover {
@@ -326,7 +295,7 @@ input:focus-visible {
 	overflow-x: auto;
 	border: 1px solid var(--border);
 	border-radius: 0.25rem;
-	background: #212529;
+	background: #1a1d20;
 	padding: 1rem 1.1rem;
 	color: #dee2e6;
 	font-family: var(--font-mono), ui-monospace, monospace;

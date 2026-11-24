@@ -2,31 +2,15 @@
 
 import { Moon, Sun } from "@phosphor-icons/react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
-export function ThemeToggle() {
+export function ThemeToggle({ className }: { className: string }) {
 	const { resolvedTheme, setTheme } = useTheme();
-	const [mounted, setMounted] = useState(false);
 
-	useEffect(() => {
-		// The theme is only available after hydration, preventing an icon mismatch.
-		// eslint-disable-next-line react-hooks/set-state-in-effect
-		setMounted(true);
-	}, []);
-
-	if (!mounted) return <div className="size-9" aria-hidden="true" />;
-
-	const isDark = resolvedTheme === "dark";
-
+	// Both icons render and CSS picks one, because the theme is unknown during server rendering.
 	return (
-		<button
-			type="button"
-			className="focus-ring inline-flex size-9 items-center justify-center rounded text-muted-foreground transition-colors hover:bg-muted hover:text-primary"
-			onClick={() => setTheme(isDark ? "light" : "dark")}
-			aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-			aria-pressed={isDark}
-		>
-			{isDark ? <Sun weight="bold" size={17} aria-hidden="true" /> : <Moon weight="bold" size={17} aria-hidden="true" />}
+		<button type="button" className={className} onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")} aria-label="Toggle dark mode">
+			<Sun weight="bold" size={18} aria-hidden="true" className="hidden dark:block" />
+			<Moon weight="bold" size={18} aria-hidden="true" className="dark:hidden" />
 		</button>
 	);
 }
