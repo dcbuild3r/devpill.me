@@ -1,5 +1,6 @@
-import { ArrowRight, CaretRight } from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import { HeroCapsule } from "./hero-capsule";
 import { GuideTracks } from "@/components/docs/guide-tracks";
 import { Button } from "@/components/ui/button";
 import type { Content, Page } from "@/lib/content";
@@ -37,24 +38,7 @@ export function Home({ page, content }: { page: Page; content: Content }) {
 							))}
 						</dl>
 					</div>
-					<div className="w-full rounded border border-border lg:max-w-md">
-						<div className="eyebrow flex justify-between border-b border-border px-6 py-4 text-muted-foreground">
-							<span>Start here</span>
-							<span>{start.pages.reduce((sum, item) => sum + item.readingTime, 0)} min</span>
-						</div>
-						<ol>
-							{start.pages.map((item, index) => (
-								<li key={item.route}>
-									<Link href={item.route} className="group flex min-h-16 items-center gap-4 border-b border-border px-6 py-3 transition-colors hover:bg-muted">
-										<span className="font-mono text-[0.8125rem] text-primary">{String(index + 1).padStart(2, "0")}</span>
-										<span className="flex-1 font-semibold text-foreground group-hover:text-primary">{item.title}</span>
-										<CaretRight className="text-muted-foreground" aria-hidden="true" />
-									</Link>
-								</li>
-							))}
-						</ol>
-						<p className="px-6 py-4 text-sm leading-6 text-muted-foreground">{start.pages.length} short notes that explain what the guide is and how to pick a specialization.</p>
-					</div>
+					<HeroCapsule />
 				</div>
 			</section>
 
